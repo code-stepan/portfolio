@@ -272,9 +272,11 @@ if (langToggleBtn) {
   });
 }
 
-// --- Interactive Background Canvas (Ambient Constellation) ---
+// --- Interactive Background Canvas (Desktop fine pointer only, 0 CPU on mobile) ---
 const canvas = document.getElementById("bg-canvas");
-if (canvas) {
+const isDesktopPointer = window.innerWidth > 768 && window.matchMedia("(pointer: fine)").matches;
+
+if (canvas && isDesktopPointer) {
   const ctx = canvas.getContext("2d");
   let width = (canvas.width = window.innerWidth);
   let height = (canvas.height = window.innerHeight);
@@ -282,24 +284,23 @@ if (canvas) {
   window.addEventListener("resize", () => {
     width = canvas.width = window.innerWidth;
     height = canvas.height = window.innerHeight;
-  });
+  }, { passive: true });
 
   const particles = [];
-  const particleCount = Math.min(Math.floor(window.innerWidth / 28), 45);
+  const particleCount = 28;
 
   class Particle {
     constructor() {
       this.x = Math.random() * width;
       this.y = Math.random() * height;
-      this.vx = (Math.random() - 0.5) * 0.45;
-      this.vy = (Math.random() - 0.5) * 0.45;
-      this.radius = Math.random() * 2 + 1;
+      this.vx = (Math.random() - 0.5) * 0.35;
+      this.vy = (Math.random() - 0.5) * 0.35;
+      this.radius = Math.random() * 1.8 + 0.8;
     }
 
     update() {
       this.x += this.vx;
       this.y += this.vy;
-
       if (this.x < 0 || this.x > width) this.vx *= -1;
       if (this.y < 0 || this.y > height) this.vy *= -1;
     }
@@ -307,7 +308,7 @@ if (canvas) {
     draw() {
       ctx.beginPath();
       ctx.arc(this.x, this.y, this.radius, 0, Math.PI * 2);
-      ctx.fillStyle = "rgba(99, 102, 241, 0.45)";
+      ctx.fillStyle = "rgba(99, 102, 241, 0.4)";
       ctx.fill();
     }
   }
@@ -317,6 +318,10 @@ if (canvas) {
   }
 
   function animateCanvas() {
+    if (document.hidden) {
+      requestAnimationFrame(animateCanvas);
+      return;
+    }
     ctx.clearRect(0, 0, width, height);
 
     for (let i = 0; i < particles.length; i++) {
@@ -326,14 +331,15 @@ if (canvas) {
       for (let j = i + 1; j < particles.length; j++) {
         const dx = particles[i].x - particles[j].x;
         const dy = particles[i].y - particles[j].y;
-        const dist = Math.sqrt(dx * dx + dy * dy);
+        const distSq = dx * dx + dy * dy;
 
-        if (dist < 130) {
+        if (distSq < 125 * 125) {
+          const dist = Math.sqrt(distSq);
           ctx.beginPath();
           ctx.moveTo(particles[i].x, particles[i].y);
           ctx.lineTo(particles[j].x, particles[j].y);
-          ctx.strokeStyle = `rgba(99, 102, 241, ${0.16 * (1 - dist / 130)})`;
-          ctx.lineWidth = 0.8;
+          ctx.strokeStyle = `rgba(99, 102, 241, ${0.14 * (1 - dist / 125)})`;
+          ctx.lineWidth = 0.75;
           ctx.stroke();
         }
       }
@@ -343,74 +349,107 @@ if (canvas) {
   animateCanvas();
 }
 
-// --- Cursor Glow Effect ---
+// --- Cursor Glow Effect (Desktop Fine Pointer Only) ---
 const cursorGlow = document.querySelector(".cursor-glow");
-if (cursorGlow && window.matchMedia("(hover: hover)").matches) {
+if (cursorGlow && window.matchMedia("(pointer: fine)").matches) {
+  let glowTicking = false;
   window.addEventListener("mousemove", (e) => {
-    cursorGlow.style.left = `${e.clientX}px`;
-    cursorGlow.style.top = `${e.clientY}px`;
-  });
+    if (!glowTicking) {
+      requestAnimationFrame(() => {
+        cursorGlow.style.left = `${e.clientX}px`;
+        cursorGlow.style.top = `${e.clientY}px`;
+        glowTicking = false;
+      });
+      glowTicking = true;
+    }
+  }, { passive: true });
 }
 
-// --- Navbar Scroll & Active Section Indicator ---
+// --- High-Performance Navbar Scroll & Active Section (Zero Layout Thrashing) ---
 const navbar = document.querySelector(".navbar");
 const navLinks = document.querySelectorAll(".nav-link");
+const backToTopBtn = document.getElementById("back-to-top");
 const sections = document.querySelectorAll("section[id]");
 
-window.addEventListener("scroll", () => {
-  if (window.scrollY > 40) {
+let isScrollTicking = false;
+
+function updateScrollState() {
+  const scrollY = window.scrollY || window.pageYOffset;
+
+  if (scrollY > 30) {
     navbar.classList.add("scrolled");
   } else {
     navbar.classList.remove("scrolled");
   }
 
-  const backToTopBtn = document.getElementById("back-to-top");
   if (backToTopBtn) {
-    if (window.scrollY > 400) {
+    if (scrollY > 350) {
       backToTopBtn.classList.add("show");
     } else {
       backToTopBtn.classList.remove("show");
     }
   }
 
-  let currentSecId = "";
-  sections.forEach((section) => {
-    const sectionTop = section.offsetTop - 120;
-    const sectionHeight = section.offsetHeight;
-    if (window.scrollY >= sectionTop && window.scrollY < sectionTop + sectionHeight) {
-      currentSecId = section.getAttribute("id");
-    }
+  isScrollTicking = false;
+}
+
+window.addEventListener("scroll", () => {
+  if (!isScrollTicking) {
+    requestAnimationFrame(updateScrollState);
+    isScrollTicking = true;
+  }
+}, { passive: true });
+
+// Use IntersectionObserver for active section highlighting without scroll overhead
+if ('IntersectionObserver' in window && sections.length > 0) {
+  const sectionObserver = new IntersectionObserver((entries) => {
+    entries.forEach((entry) => {
+      if (entry.isIntersecting) {
+        const id = entry.target.getAttribute("id");
+        navLinks.forEach((link) => {
+          if (link.getAttribute("href") === `#${id}`) {
+            link.classList.add("active");
+          } else {
+            link.classList.remove("active");
+          }
+        });
+      }
+    });
+  }, {
+    rootMargin: "-20% 0px -65% 0px"
   });
 
-  navLinks.forEach((link) => {
-    link.classList.remove("active");
-    if (link.getAttribute("href") === `#${currentSecId}`) {
-      link.classList.add("active");
-    }
-  });
-});
+  sections.forEach((sec) => sectionObserver.observe(sec));
+}
 
-// Mobile burger menu
+// --- Mobile Drawer & Backdrop ---
 const burgerBtn = document.getElementById("burger-btn");
 const navList = document.querySelector(".nav-links");
+const navBackdrop = document.getElementById("nav-backdrop");
+
+function closeMobileMenu() {
+  if (navList) navList.classList.remove("open");
+  if (navBackdrop) navBackdrop.classList.remove("active");
+  const icon = burgerBtn?.querySelector("i");
+  if (icon) icon.className = "ri-menu-4-line";
+}
 
 if (burgerBtn && navList) {
   burgerBtn.addEventListener("click", () => {
-    navList.classList.toggle("open");
+    const isOpen = navList.classList.toggle("open");
+    if (navBackdrop) navBackdrop.classList.toggle("active", isOpen);
     const icon = burgerBtn.querySelector("i");
-    if (navList.classList.contains("open")) {
-      icon.className = "ri-close-line";
-    } else {
-      icon.className = "ri-menu-4-line";
+    if (icon) {
+      icon.className = isOpen ? "ri-close-line" : "ri-menu-4-line";
     }
   });
 
+  if (navBackdrop) {
+    navBackdrop.addEventListener("click", closeMobileMenu);
+  }
+
   navList.querySelectorAll(".nav-link").forEach((link) => {
-    link.addEventListener("click", () => {
-      navList.classList.remove("open");
-      const icon = burgerBtn.querySelector("i");
-      if (icon) icon.className = "ri-menu-4-line";
-    });
+    link.addEventListener("click", closeMobileMenu);
   });
 }
 
