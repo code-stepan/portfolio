@@ -1,0 +1,749 @@
+<!DOCTYPE html>
+<html lang="ru" data-theme="dark">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Степан — Frontend & Full-Stack Developer | Портфолио</title>
+  
+  <!-- Meta tags for SEO & Social Sharing -->
+  <meta name="description" content="Портфолио веб-разработчика Степана. Современный фронтенд, Full-Stack решения, интерактивные веб-приложения на React, TypeScript и Node.js.">
+  <meta name="keywords" content="веб-разработчик, frontend developer, full-stack, react, typescript, javascript, портфолио, создание сайтов">
+  <meta name="author" content="Степан">
+
+  <!-- Open Graph / Telegram / Discord Preview -->
+  <meta property="og:type" content="website">
+  <meta property="og:title" content="Степан — Frontend & Full-Stack Developer">
+  <meta property="og:description" content="Создаю быстрые, масштабируемые и стильные веб-приложения с чистым кодом и современным UI/UX.">
+  <meta property="og:image" content="https://images.unsplash.com/photo-1555066931-4365d14bab8c?w=1200&auto=format&fit=crop&q=80">
+
+  <!-- Favicon -->
+  <link rel="icon" href="data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220%22%20viewBox=%220 0 100 100%22><text y=%22.9em%22 font-size=%2290%22>⚡</text></svg>">
+
+  <!-- Google Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&family=JetBrains+Mono:wght@400;500;600&display=swap" rel="stylesheet">
+
+  <!-- Remix Icon CDN -->
+  <link href="https://cdn.jsdelivr.net/npm/remixicon@4.2.0/fonts/remixicon.css" rel="stylesheet">
+
+  <!-- Custom CSS -->
+  <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+
+  <!-- Ambient background canvas -->
+  <canvas id="bg-canvas"></canvas>
+
+  <!-- Mouse spotlight glow (desktop) -->
+  <div class="cursor-glow"></div>
+
+  <!-- Header / Navigation -->
+  <header class="navbar">
+    <div class="container navbar-inner">
+      <a href="#hero" class="logo">
+        <span class="code-bracket">&lt;</span>Stepan<span class="gradient-text">.dev</span><span class="code-bracket">/&gt;</span>
+      </a>
+
+      <nav>
+        <ul class="nav-links">
+          <li><a href="#about" class="nav-link" data-i18n="navAbout">Обо мне</a></li>
+          <li><a href="#skills" class="nav-link" data-i18n="navSkills">Навыки</a></li>
+          <li><a href="#projects" class="nav-link" data-i18n="navProjects">Проекты</a></li>
+          <li><a href="#experience" class="nav-link" data-i18n="navExperience">Опыт</a></li>
+          <li><a href="#contact" class="nav-link" data-i18n="navContact">Контакты</a></li>
+        </ul>
+      </nav>
+
+      <div class="nav-actions">
+        <!-- Language Switcher -->
+        <button id="lang-toggle" class="icon-btn lang-btn" title="Сменить язык / Switch Language">RU</button>
+
+        <!-- Theme Toggle -->
+        <button id="theme-toggle" class="icon-btn" aria-label="Переключить тему" title="Светлая/Темная тема">
+          <i class="ri-sun-line"></i>
+        </button>
+
+        <!-- Mobile Burger -->
+        <button id="burger-btn" class="icon-btn burger-btn" aria-label="Открыть меню">
+          <i class="ri-menu-4-line"></i>
+        </button>
+      </div>
+    </div>
+  </header>
+
+  <main>
+    <!-- ================= Hero Section ================= -->
+    <section id="hero" class="section hero">
+      <div class="container hero-grid">
+        <div class="hero-content">
+          <div class="status-badge">
+            <span class="dot"></span>
+            <span data-i18n="statusAvailable">Доступен для новых проектов</span>
+          </div>
+
+          <h1 class="hero-title">
+            <span data-i18n="heroGreeting">Привет! Я Степан —</span><br>
+            <span class="typing-container gradient-text">
+              <span id="typing-text">Frontend Developer</span><span class="typing-cursor">&nbsp;</span>
+            </span>
+          </h1>
+
+          <p class="hero-desc" data-i18n="heroDesc">
+            Создаю быстрые, масштабируемые и интуитивно понятные веб-приложения с современным стеком технологий. Превращаю сложные идеи в элегантный код.
+          </p>
+
+          <div class="hero-buttons">
+            <a href="#projects" class="btn btn-primary">
+              <i class="ri-code-s-slash-line"></i>
+              <span data-i18n="btnProjects">Посмотреть проекты</span>
+            </a>
+            <a href="#contact" class="btn btn-secondary">
+              <i class="ri-mail-send-line"></i>
+              <span data-i18n="btnContact">Связаться со мной</span>
+            </a>
+            <a href="#contact" class="btn btn-outline">
+              <i class="ri-file-download-line"></i>
+              <span data-i18n="btnResume">Резюме / CV</span>
+            </a>
+          </div>
+
+          <div class="hero-socials">
+            <a href="https://github.com/code-stepan" target="_blank" rel="noopener noreferrer" class="social-link" title="GitHub">
+              <i class="ri-github-fill"></i>
+            </a>
+            <a href="https://t.me/your_telegram" target="_blank" rel="noopener noreferrer" class="social-link" title="Telegram">
+              <i class="ri-telegram-fill"></i>
+            </a>
+            <a href="mailto:stepan.developer@example.com" class="social-link" title="Email">
+              <i class="ri-mail-fill"></i>
+            </a>
+          </div>
+        </div>
+
+        <!-- Interactive Code Card -->
+        <div class="hero-visual">
+          <div class="code-window">
+            <div class="window-header">
+              <div class="window-dots">
+                <span class="window-dot red"></span>
+                <span class="window-dot yellow"></span>
+                <span class="window-dot green"></span>
+              </div>
+              <div class="window-title">developer.ts</div>
+            </div>
+            <pre class="window-body"><code><span class="code-token-keyword">const</span> developer = {
+  <span class="code-token-prop">name</span>: <span class="code-token-string">'Степан'</span>,
+  <span class="code-token-prop">role</span>: <span class="code-token-string">'Frontend / Full-Stack'</span>,
+  <span class="code-token-prop">primaryStack</span>: [
+    <span class="code-token-string">'TypeScript'</span>,
+    <span class="code-token-string">'React'</span>,
+    <span class="code-token-string">'Next.js'</span>,
+    <span class="code-token-string">'Node.js'</span>
+  ],
+  <span class="code-token-prop">values</span>: [
+    <span class="code-token-string">'Clean Code'</span>,
+    <span class="code-token-string">'Responsive UI'</span>,
+    <span class="code-token-string">'High Performance'</span>
+  ],
+  <span class="code-token-prop">isOpenToWork</span>: <span class="code-token-keyword">true</span>,
+  <span class="code-token-prop">sayHello</span>(): <span class="code-token-keyword">void</span> {
+    console.<span class="code-token-prop">log</span>(<span class="code-token-string">"Готов к новым вызовам!"</span>);
+  }
+};</code></pre>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ================= Quick Stats ================= -->
+    <section class="section-stats">
+      <div class="container">
+        <div class="stats-grid">
+          <div class="stat-card">
+            <div class="stat-number gradient-text">3+</div>
+            <div class="stat-label" data-i18n="statExp">Года опыта</div>
+          </div>
+          <div class="stat-card">
+            <div class="stat-number gradient-text">20+</div>
+            <div class="stat-label" data-i18n="statProjects">Завершенных проектов</div>
+          </div>
+          <div class="stat-card">
+            <div class="stat-number gradient-text">500+</div>
+            <div class="stat-label" data-i18n="statCommits">Коммитов за год</div>
+          </div>
+          <div class="stat-card">
+            <div class="stat-number gradient-text">100%</div>
+            <div class="stat-label" data-i18n="statPassion">Внимание к деталям</div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ================= About Section ================= -->
+    <section id="about" class="section">
+      <div class="container">
+        <div class="section-header">
+          <span class="section-tag" data-i18n="aboutTag">Обо мне</span>
+          <h2 class="section-title" data-i18n="aboutTitle">Увлеченный разработчик, создающий продукты с душой</h2>
+        </div>
+
+        <div class="about-grid">
+          <div class="about-text">
+            <p data-i18n="aboutP1">
+              Привет! Меня зовут Степан. Я веб-разработчик, увлеченный созданием современных пользовательских интерфейсов и надежной архитектуры веб-сервисов.
+            </p>
+            <p data-i18n="aboutP2">
+              Мой фокус — чистый, поддерживаемый код, адаптивный дизайн и отличный пользовательский опыт (UX/UI). Постоянно изучаю передовые технологии и оптимизирую производительность приложений.
+            </p>
+
+            <div class="about-features">
+              <div class="about-feature-item">
+                <div class="about-feature-icon"><i class="ri-code-line"></i></div>
+                <div>
+                  <h4 class="about-feature-title" data-i18n="featureCleanTitle">Чистый код</h4>
+                  <p class="about-feature-desc" data-i18n="featureCleanDesc">Модульная структура, читаемость и лучшие практики разработки.</p>
+                </div>
+              </div>
+
+              <div class="about-feature-item">
+                <div class="about-feature-icon"><i class="ri-flashlight-line"></i></div>
+                <div>
+                  <h4 class="about-feature-title" data-i18n="featureUxTitle">UX & Перфоманс</h4>
+                  <p class="about-feature-desc" data-i18n="featureUxDesc">Быстрая загрузка, доступность и плавные анимации.</p>
+                </div>
+              </div>
+
+              <div class="about-feature-item">
+                <div class="about-feature-icon"><i class="ri-stack-line"></i></div>
+                <div>
+                  <h4 class="about-feature-title" data-i18n="featureStackTitle">Современный стек</h4>
+                  <p class="about-feature-desc" data-i18n="featureStackDesc">TypeScript, React, Node.js и актуальный инструментарий.</p>
+                </div>
+              </div>
+
+              <div class="about-feature-item">
+                <div class="about-feature-icon"><i class="ri-focus-3-line"></i></div>
+                <div>
+                  <h4 class="about-feature-title" data-i18n="featureSolveTitle">Решение задач</h4>
+                  <p class="about-feature-desc" data-i18n="featureSolveDesc">Фокус на бизнес-логике и достижении измеримых результатов.</p>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <div class="about-visual">
+            <div class="about-card-box">
+              <span class="about-card-badge">Инфо-лист</span>
+              <ul class="about-list">
+                <li class="about-list-item">
+                  <span class="about-list-label" data-i18n="infoNameLabel">Имя:</span>
+                  <span class="about-list-value">Степан (Stepan)</span>
+                </li>
+                <li class="about-list-item">
+                  <span class="about-list-label" data-i18n="infoSpecialtyLabel">Специализация:</span>
+                  <span class="about-list-value" data-i18n="infoSpecialtyVal">Frontend / Full-Stack</span>
+                </li>
+                <li class="about-list-item">
+                  <span class="about-list-label" data-i18n="infoLocationLabel">Локация:</span>
+                  <span class="about-list-value" data-i18n="infoLocationVal">Москва, Россия (Удаленно)</span>
+                </li>
+                <li class="about-list-item">
+                  <span class="about-list-label" data-i18n="infoEmailLabel">Email:</span>
+                  <span class="about-list-value">stepan.developer@example.com</span>
+                </li>
+                <li class="about-list-item">
+                  <span class="about-list-label">Формат работы:</span>
+                  <span class="about-list-value">Full-time / Удаленно / Проекты</span>
+                </li>
+              </ul>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ================= Skills Section ================= -->
+    <section id="skills" class="section">
+      <div class="container">
+        <div class="section-header">
+          <span class="section-tag" data-i18n="skillsTag">Стек технологий</span>
+          <h2 class="section-title" data-i18n="skillsTitle">Инструменты и навыки</h2>
+          <p class="section-subtitle" data-i18n="skillsSubtitle">Технологии, которые я использую для решения реальных задач</p>
+        </div>
+
+        <div class="skills-container">
+          <!-- Category 1: Frontend -->
+          <div class="skill-category-card">
+            <div class="skill-cat-header">
+              <div class="skill-cat-icon"><i class="ri-window-line"></i></div>
+              <h3 class="skill-cat-title" data-i18n="skillCatFrontend">Frontend разработка</h3>
+            </div>
+            <div class="skill-tags">
+              <span class="skill-tag"><i class="ri-html5-fill"></i> HTML5 / Semantic</span>
+              <span class="skill-tag"><i class="ri-css3-fill"></i> CSS3 / SCSS</span>
+              <span class="skill-tag"><i class="ri-javascript-fill"></i> JavaScript (ES6+)</span>
+              <span class="skill-tag"><i class="ri-braces-line"></i> TypeScript</span>
+              <span class="skill-tag"><i class="ri-reactjs-line"></i> React.js</span>
+              <span class="skill-tag"><i class="ri-nextjs-fill"></i> Next.js</span>
+              <span class="skill-tag"><i class="ri-palette-line"></i> Tailwind CSS</span>
+              <span class="skill-tag"><i class="ri-database-2-line"></i> Redux / Zustand</span>
+            </div>
+          </div>
+
+          <!-- Category 2: Backend & DB -->
+          <div class="skill-category-card">
+            <div class="skill-cat-header">
+              <div class="skill-cat-icon"><i class="ri-server-line"></i></div>
+              <h3 class="skill-cat-title" data-i18n="skillCatBackend">Backend & Базы данных</h3>
+            </div>
+            <div class="skill-tags">
+              <span class="skill-tag"><i class="ri-nodejs-line"></i> Node.js</span>
+              <span class="skill-tag"><i class="ri-links-line"></i> Express.js</span>
+              <span class="skill-tag"><i class="ri-code-box-line"></i> Python / FastAPI</span>
+              <span class="skill-tag"><i class="ri-database-line"></i> PostgreSQL</span>
+              <span class="skill-tag"><i class="ri-leaf-line"></i> MongoDB</span>
+              <span class="skill-tag"><i class="ri-cloud-line"></i> RESTful APIs</span>
+              <span class="skill-tag"><i class="ri-shield-check-line"></i> JWT & Auth</span>
+            </div>
+          </div>
+
+          <!-- Category 3: Tools & DevOps -->
+          <div class="skill-category-card">
+            <div class="skill-cat-header">
+              <div class="skill-cat-icon"><i class="ri-tools-line"></i></div>
+              <h3 class="skill-cat-title" data-i18n="skillCatTools">Инструменты & DevOps</h3>
+            </div>
+            <div class="skill-tags">
+              <span class="skill-tag"><i class="ri-git-branch-line"></i> Git</span>
+              <span class="skill-tag"><i class="ri-github-line"></i> GitHub Pages / Actions</span>
+              <span class="skill-tag"><i class="ri-flashlight-line"></i> Vite / Webpack</span>
+              <span class="skill-tag"><i class="ri-computer-line"></i> Docker basics</span>
+              <span class="skill-tag"><i class="ri-send-plane-line"></i> Postman</span>
+              <span class="skill-tag"><i class="ri-terminal-box-line"></i> Linux / CLI</span>
+              <span class="skill-tag"><i class="ri-figma-line"></i> Figma to Code</span>
+            </div>
+          </div>
+
+          <!-- Category 4: Soft Skills & Workflows -->
+          <div class="skill-category-card">
+            <div class="skill-cat-header">
+              <div class="skill-cat-icon"><i class="ri-user-star-line"></i></div>
+              <h3 class="skill-cat-title" data-i18n="skillCatSoft">Методологии & Soft Skills</h3>
+            </div>
+            <div class="skill-tags">
+              <span class="skill-tag"><i class="ri-team-line"></i> Agile / Scrum</span>
+              <span class="skill-tag"><i class="ri-check-double-line"></i> Code Review</span>
+              <span class="skill-tag"><i class="ri-smartphone-line"></i> Mobile-first Design</span>
+              <span class="skill-tag"><i class="ri-speed-up-line"></i> Web Vitals & Оптимизация</span>
+              <span class="skill-tag"><i class="ri-chat-voice-line"></i> Коммуникабельность</span>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ================= Projects Section ================= -->
+    <section id="projects" class="section">
+      <div class="container">
+        <div class="section-header">
+          <span class="section-tag" data-i18n="projectsTag">Портфолио</span>
+          <h2 class="section-title" data-i18n="projectsTitle">Избранные проекты</h2>
+          <p class="section-subtitle" data-i18n="projectsSubtitle">Некоторые из моих недавних работ и пет-проектов</p>
+        </div>
+
+        <!-- Filter Buttons -->
+        <div class="project-filters">
+          <button class="filter-btn active" data-filter="all" data-i18n="filterAll">Все</button>
+          <button class="filter-btn" data-filter="fullstack" data-i18n="filterFullstack">Full-Stack</button>
+          <button class="filter-btn" data-filter="frontend" data-i18n="filterFrontend">Frontend</button>
+          <button class="filter-btn" data-filter="backend" data-i18n="filterBackend">Сервисы & API</button>
+        </div>
+
+        <!-- Projects Grid -->
+        <div class="projects-grid">
+          <!-- Project 1 -->
+          <article class="project-card" data-category="fullstack">
+            <div class="project-mockup">
+              <span class="project-badge">Full-Stack</span>
+              <div class="project-mockup-graphic">
+                <div class="mockup-bar">
+                  <div class="mockup-dot"></div>
+                  <div class="mockup-dot"></div>
+                  <div class="mockup-dot"></div>
+                </div>
+                <div class="mockup-preview">
+                  <i class="ri-shopping-bag-3-line mockup-icon"></i>
+                  <span style="font-size: 0.85rem; font-weight: 600;">E-Commerce Storefront</span>
+                </div>
+              </div>
+            </div>
+            <div class="project-info">
+              <h3 class="project-title">E-Commerce Web App</h3>
+              <p class="project-desc">Полнофункциональный интернет-магазин с корзиной, фильтрацией товаров, поиском и интеграцией платежного шлюза.</p>
+              <div class="project-tech">
+                <span class="project-tech-item">React</span>
+                <span class="project-tech-item">TypeScript</span>
+                <span class="project-tech-item">Tailwind CSS</span>
+                <span class="project-tech-item">Node.js</span>
+              </div>
+              <div class="project-links">
+                <a href="https://github.com/code-stepan" target="_blank" rel="noopener noreferrer" class="btn btn-secondary project-link-btn">
+                  <i class="ri-external-link-line"></i> <span data-i18n="btnLive">Демо</span>
+                </a>
+                <a href="https://github.com/code-stepan" target="_blank" rel="noopener noreferrer" class="btn btn-secondary project-link-btn">
+                  <i class="ri-github-line"></i> <span data-i18n="btnCode">GitHub</span>
+                </a>
+              </div>
+            </div>
+          </article>
+
+          <!-- Project 2 -->
+          <article class="project-card" data-category="frontend">
+            <div class="project-mockup">
+              <span class="project-badge">Frontend</span>
+              <div class="project-mockup-graphic">
+                <div class="mockup-bar">
+                  <div class="mockup-dot"></div>
+                  <div class="mockup-dot"></div>
+                  <div class="mockup-dot"></div>
+                </div>
+                <div class="mockup-preview">
+                  <i class="ri-dashboard-3-line mockup-icon"></i>
+                  <span style="font-size: 0.85rem; font-weight: 600;">Analytics Dashboard</span>
+                </div>
+              </div>
+            </div>
+            <div class="project-info">
+              <h3 class="project-title">SaaS Analytics Dashboard</h3>
+              <p class="project-desc">Интерактивная панель аналитики с интерактивными графиками, поддержкой темной темы и экспортом данных в PDF/CSV.</p>
+              <div class="project-tech">
+                <span class="project-tech-item">Next.js</span>
+                <span class="project-tech-item">Chart.js</span>
+                <span class="project-tech-item">Zustand</span>
+                <span class="project-tech-item">CSS Modules</span>
+              </div>
+              <div class="project-links">
+                <a href="https://github.com/code-stepan" target="_blank" rel="noopener noreferrer" class="btn btn-secondary project-link-btn">
+                  <i class="ri-external-link-line"></i> <span data-i18n="btnLive">Демо</span>
+                </a>
+                <a href="https://github.com/code-stepan" target="_blank" rel="noopener noreferrer" class="btn btn-secondary project-link-btn">
+                  <i class="ri-github-line"></i> <span data-i18n="btnCode">GitHub</span>
+                </a>
+              </div>
+            </div>
+          </article>
+
+          <!-- Project 3 -->
+          <article class="project-card" data-category="fullstack">
+            <div class="project-mockup">
+              <span class="project-badge">Full-Stack</span>
+              <div class="project-mockup-graphic">
+                <div class="mockup-bar">
+                  <div class="mockup-dot"></div>
+                  <div class="mockup-dot"></div>
+                  <div class="mockup-dot"></div>
+                </div>
+                <div class="mockup-preview">
+                  <i class="ri-task-line mockup-icon"></i>
+                  <span style="font-size: 0.85rem; font-weight: 600;">Kanban Task Master</span>
+                </div>
+              </div>
+            </div>
+            <div class="project-info">
+              <h3 class="project-title">Kanban Task Manager</h3>
+              <p class="project-desc">Приложение для управления проектами по методологии Kanban с функцией Drag & Drop, дедлайнами и командными досками.</p>
+              <div class="project-tech">
+                <span class="project-tech-item">React</span>
+                <span class="project-tech-item">dnd-kit</span>
+                <span class="project-tech-item">Express</span>
+                <span class="project-tech-item">PostgreSQL</span>
+              </div>
+              <div class="project-links">
+                <a href="https://github.com/code-stepan" target="_blank" rel="noopener noreferrer" class="btn btn-secondary project-link-btn">
+                  <i class="ri-external-link-line"></i> <span data-i18n="btnLive">Демо</span>
+                </a>
+                <a href="https://github.com/code-stepan" target="_blank" rel="noopener noreferrer" class="btn btn-secondary project-link-btn">
+                  <i class="ri-github-line"></i> <span data-i18n="btnCode">GitHub</span>
+                </a>
+              </div>
+            </div>
+          </article>
+
+          <!-- Project 4 -->
+          <article class="project-card" data-category="frontend">
+            <div class="project-mockup">
+              <span class="project-badge">Frontend</span>
+              <div class="project-mockup-graphic">
+                <div class="mockup-bar">
+                  <div class="mockup-dot"></div>
+                  <div class="mockup-dot"></div>
+                  <div class="mockup-dot"></div>
+                </div>
+                <div class="mockup-preview">
+                  <i class="ri-weather-line mockup-icon"></i>
+                  <span style="font-size: 0.85rem; font-weight: 600;">Interactive Weather Hub</span>
+                </div>
+              </div>
+            </div>
+            <div class="project-info">
+              <h3 class="project-title">Weather Forecast PWA</h3>
+              <p class="project-desc">Прогрессивное веб-приложение для просмотра прогноза погоды в реальном времени с геолокацией и оффлайн-режимом.</p>
+              <div class="project-tech">
+                <span class="project-tech-item">JavaScript</span>
+                <span class="project-tech-item">OpenWeather API</span>
+                <span class="project-tech-item">Service Workers</span>
+              </div>
+              <div class="project-links">
+                <a href="https://github.com/code-stepan" target="_blank" rel="noopener noreferrer" class="btn btn-secondary project-link-btn">
+                  <i class="ri-external-link-line"></i> <span data-i18n="btnLive">Демо</span>
+                </a>
+                <a href="https://github.com/code-stepan" target="_blank" rel="noopener noreferrer" class="btn btn-secondary project-link-btn">
+                  <i class="ri-github-line"></i> <span data-i18n="btnCode">GitHub</span>
+                </a>
+              </div>
+            </div>
+          </article>
+
+          <!-- Project 5 -->
+          <article class="project-card" data-category="backend">
+            <div class="project-mockup">
+              <span class="project-badge">Backend</span>
+              <div class="project-mockup-graphic">
+                <div class="mockup-bar">
+                  <div class="mockup-dot"></div>
+                  <div class="mockup-dot"></div>
+                  <div class="mockup-dot"></div>
+                </div>
+                <div class="mockup-preview">
+                  <i class="ri-key-2-line mockup-icon"></i>
+                  <span style="font-size: 0.85rem; font-weight: 600;">Auth & Microservice API</span>
+                </div>
+              </div>
+            </div>
+            <div class="project-info">
+              <h3 class="project-title">JWT Auth Service & API</h3>
+              <p class="project-desc">Готовый сервис аутентификации с поддержкой Access & Refresh токенов, ролевой модели (RBAC), rate-limiting и Swagger документацией.</p>
+              <div class="project-tech">
+                <span class="project-tech-item">Node.js</span>
+                <span class="project-tech-item">Express</span>
+                <span class="project-tech-item">MongoDB</span>
+                <span class="project-tech-item">Docker</span>
+              </div>
+              <div class="project-links">
+                <a href="https://github.com/code-stepan" target="_blank" rel="noopener noreferrer" class="btn btn-secondary project-link-btn">
+                  <i class="ri-external-link-line"></i> <span data-i18n="btnLive">Демо</span>
+                </a>
+                <a href="https://github.com/code-stepan" target="_blank" rel="noopener noreferrer" class="btn btn-secondary project-link-btn">
+                  <i class="ri-github-line"></i> <span data-i18n="btnCode">GitHub</span>
+                </a>
+              </div>
+            </div>
+          </article>
+
+          <!-- Project 6 -->
+          <article class="project-card" data-category="frontend">
+            <div class="project-mockup">
+              <span class="project-badge">Frontend</span>
+              <div class="project-mockup-graphic">
+                <div class="mockup-bar">
+                  <div class="mockup-dot"></div>
+                  <div class="mockup-dot"></div>
+                  <div class="mockup-dot"></div>
+                </div>
+                <div class="mockup-preview">
+                  <i class="ri-sparkling-line mockup-icon"></i>
+                  <span style="font-size: 0.85rem; font-weight: 600;">Modern Portfolio</span>
+                </div>
+              </div>
+            </div>
+            <div class="project-info">
+              <h3 class="project-title">Modern Portfolio Engine</h3>
+              <p class="project-desc">Ультрабыстрый сайт-портфолио без сторонних тяжелых библиотек с поддержкой двуязычности, темной темы и эффектов Canvas.</p>
+              <div class="project-tech">
+                <span class="project-tech-item">HTML5</span>
+                <span class="project-tech-item">Modern CSS</span>
+                <span class="project-tech-item">JavaScript ES6+</span>
+              </div>
+              <div class="project-links">
+                <a href="#hero" class="btn btn-secondary project-link-btn">
+                  <i class="ri-external-link-line"></i> <span data-i18n="btnLive">Демо</span>
+                </a>
+                <a href="https://github.com/code-stepan/portfolio" target="_blank" rel="noopener noreferrer" class="btn btn-secondary project-link-btn">
+                  <i class="ri-github-line"></i> <span data-i18n="btnCode">GitHub</span>
+                </a>
+              </div>
+            </div>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <!-- ================= Experience Section ================= -->
+    <section id="experience" class="section">
+      <div class="container">
+        <div class="section-header">
+          <span class="section-tag" data-i18n="expTag">Траектория</span>
+          <h2 class="section-title" data-i18n="expTitle">Опыт и образование</h2>
+          <p class="section-subtitle" data-i18n="expSubtitle">Мой профессиональный путь и ключевые этапы</p>
+        </div>
+
+        <div class="timeline">
+          <!-- Item 1 -->
+          <div class="timeline-item">
+            <div class="timeline-dot"></div>
+            <div class="timeline-card">
+              <div class="timeline-date" data-i18n="exp1Date">2024 — Настоящее время</div>
+              <h3 class="timeline-role" data-i18n="exp1Role">Frontend / Full-Stack Разработчик</h3>
+              <div class="timeline-company" data-i18n="exp1Company">Freelance & Pet-проекты</div>
+              <p class="timeline-desc" data-i18n="exp1Desc">
+                Разработка современных веб-приложений с использованием React, TypeScript, Tailwind CSS и REST API. Проектирование UI/UX и внедрение адаптивной верстки.
+              </p>
+            </div>
+          </div>
+
+          <!-- Item 2 -->
+          <div class="timeline-item">
+            <div class="timeline-dot"></div>
+            <div class="timeline-card">
+              <div class="timeline-date" data-i18n="exp2Date">2023 — 2024</div>
+              <h3 class="timeline-role" data-i18n="exp2Role">Младший веб-разработчик</h3>
+              <div class="timeline-company" data-i18n="exp2Company">Коммерческие проекты</div>
+              <p class="timeline-desc" data-i18n="exp2Desc">
+                Создание интерактивных компонентов, интеграция сторонних API, оптимизация скорости загрузки страниц и верстка под мобильные устройства.
+              </p>
+            </div>
+          </div>
+
+          <!-- Item 3 -->
+          <div class="timeline-item">
+            <div class="timeline-dot"></div>
+            <div class="timeline-card">
+              <div class="timeline-date" data-i18n="exp3Date">2021 — 2023</div>
+              <h3 class="timeline-role" data-i18n="exp3Role">Базовое образование & Изучение CS</h3>
+              <div class="timeline-company" data-i18n="exp3Company">Курсы, практика и самообразование</div>
+              <p class="timeline-desc" data-i18n="exp3Desc">
+                Углубленное изучение JavaScript, алгоритмов, структур данных, архитектуры баз данных и паттернов проектирования ПО.
+              </p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ================= Contact Section ================= -->
+    <section id="contact" class="section">
+      <div class="container">
+        <div class="section-header">
+          <span class="section-tag" data-i18n="contactTag">Контакты</span>
+          <h2 class="section-title" data-i18n="contactTitle">Давайте работать вместе</h2>
+          <p class="section-subtitle" data-i18n="contactSubtitle">Всегда открыт для предложений, интересных проектов и обсуждения идей</p>
+        </div>
+
+        <div class="contact-grid">
+          <!-- Contact Info Column -->
+          <div class="contact-info">
+            <h3 class="contact-info-title" data-i18n="contactInfoTitle">Связаться со мной</h3>
+            <p class="contact-info-desc" data-i18n="contactInfoDesc">
+              Напишите мне в Telegram или отправьте письмо на почту. Я обычно отвечаю в течение нескольких часов!
+            </p>
+
+            <div class="contact-methods">
+              <!-- Telegram -->
+              <a href="https://t.me/your_telegram" target="_blank" rel="noopener noreferrer" class="contact-method-card">
+                <div class="contact-icon"><i class="ri-telegram-fill"></i></div>
+                <div>
+                  <div class="contact-detail-title">Telegram</div>
+                  <div class="contact-detail-val">@your_telegram</div>
+                </div>
+              </a>
+
+              <!-- Email with copy button -->
+              <div class="contact-method-card">
+                <div class="contact-icon"><i class="ri-mail-fill"></i></div>
+                <div>
+                  <div class="contact-detail-title">Email</div>
+                  <div class="contact-detail-val">stepan.developer@example.com</div>
+                </div>
+                <button id="copy-email-btn" class="copy-badge-btn" data-email="stepan.developer@example.com" title="Скопировать почту">
+                  <i class="ri-file-copy-line"></i> <span data-i18n="btnCopy">Копировать</span>
+                </button>
+              </div>
+
+              <!-- GitHub -->
+              <a href="https://github.com/code-stepan" target="_blank" rel="noopener noreferrer" class="contact-method-card">
+                <div class="contact-icon"><i class="ri-github-fill"></i></div>
+                <div>
+                  <div class="contact-detail-title">GitHub</div>
+                  <div class="contact-detail-val">github.com/code-stepan</div>
+                </div>
+              </a>
+
+              <!-- Location -->
+              <div class="contact-method-card">
+                <div class="contact-icon"><i class="ri-map-pin-line"></i></div>
+                <div>
+                  <div class="contact-detail-title" data-i18n="infoLocationLabel">Локация:</div>
+                  <div class="contact-detail-val" data-i18n="infoLocationVal">Москва, Россия (Удаленно)</div>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <!-- Contact Form Column -->
+          <div class="contact-form-card">
+            <form id="contact-form">
+              <div class="form-group">
+                <label for="form-name" class="form-label" data-i18n="formName">Ваше имя</label>
+                <input type="text" id="form-name" class="form-input" required placeholder="Иван Иванов" data-i18n-ph="formPlaceholderName">
+              </div>
+
+              <div class="form-group">
+                <label for="form-email" class="form-label" data-i18n="formEmail">Ваш Email</label>
+                <input type="email" id="form-email" class="form-input" required placeholder="ivan@example.com" data-i18n-ph="formPlaceholderEmail">
+              </div>
+
+              <div class="form-group">
+                <label for="form-msg" class="form-label" data-i18n="formMessage">Сообщение</label>
+                <textarea id="form-msg" class="form-textarea" required placeholder="Привет, Степан! Хочу обсудить проект..." data-i18n-ph="formPlaceholderMessage"></textarea>
+              </div>
+
+              <button type="submit" class="btn btn-primary" style="width: 100%;">
+                <i class="ri-send-plane-fill"></i>
+                <span data-i18n="formSubmit">Отправить сообщение</span>
+              </button>
+            </form>
+          </div>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <!-- Footer -->
+  <footer class="footer">
+    <div class="container footer-inner">
+      <div class="logo">
+        <span class="code-bracket">&lt;</span>Stepan<span class="gradient-text">.dev</span><span class="code-bracket">/&gt;</span>
+      </div>
+      <p class="footer-text" data-i18n="footerText">© 2026 Степан. Все права защищены.</p>
+      <div class="footer-links">
+        <a href="#about" class="footer-link" data-i18n="navAbout">Обо мне</a>
+        <a href="#projects" class="footer-link" data-i18n="navProjects">Проекты</a>
+        <a href="#contact" class="footer-link" data-i18n="navContact">Контакты</a>
+        <a href="https://github.com/code-stepan" target="_blank" rel="noopener noreferrer" class="footer-link">GitHub</a>
+      </div>
+    </div>
+  </footer>
+
+  <!-- Toast Notification Container -->
+  <div id="toast-container" class="toast-container"></div>
+
+  <!-- Back to top button -->
+  <button id="back-to-top" class="back-to-top" aria-label="Наверх" title="Наверх">
+    <i class="ri-arrow-up-line"></i>
+  </button>
+
+  <!-- JavaScript -->
+  <script src="js/main.js"></script>
+</body>
+</html>
