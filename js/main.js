@@ -1,6 +1,6 @@
 /**
  * Portfolio Interactive Scripts
- * Stepan - Full-Stack / Frontend Developer
+ * Stepan Pribytkov - Junior ML Engineer (NLP / LLM)
  */
 
 // --- Localization Dictionary ---
@@ -8,177 +8,169 @@ const translations = {
   ru: {
     navAbout: "Обо мне",
     navSkills: "Навыки",
+    navResearch: "Научная работа",
     navProjects: "Проекты",
-    navExperience: "Опыт",
+    navEducation: "Образование",
     navContact: "Контакты",
-    statusAvailable: "Доступен для новых проектов",
-    heroGreeting: "Привет! Я Степан —",
-    heroDesc: "Создаю быстрые, масштабируемые и интуитивно понятные веб-приложения с современным стеком технологий. Превращаю сложные идеи в элегантный код.",
-    btnProjects: "Посмотреть проекты",
+    statusAvailable: "Ищу стажировку ML-инженером",
+    heroGreeting: "Привет! Я Степан Прибытков —",
+    heroDesc: "Студент 4 курса ПМИ. Занимаюсь NLP и LLM: разрабатываю интеллектуальные RAG-системы, исследую влияние квантования и дистилляции на устойчивость языковых моделей к адверсальным атакам.",
+    btnProjects: "Смотреть проекты",
     btnContact: "Связаться со мной",
-    btnResume: "Резюме / CV",
-    statExp: "Года опыта",
-    statProjects: "Завершенных проектов",
-    statCommits: "Коммитов за год",
-    statPassion: "Внимание к деталям",
+    btnResume: "Резюме / CV (PDF)",
+    statRecall: "Recall@10 в RAG-поиске",
+    statDataset: "Записей в датасете",
+    statLatency: "Время ответа p95",
+    statCourse: "Курс ПМИ (Бакалавриат)",
     aboutTag: "Обо мне",
-    aboutTitle: "Увлеченный разработчик, создающий продукты с душой",
-    aboutP1: "Привет! Меня зовут Степан. Я веб-разработчик, увлеченный созданием современных пользовательских интерфейсов и надежной архитектуры веб-сервисов.",
-    aboutP2: "Мой фокус — чистый, поддерживаемый код, адаптивный дизайн и отличный пользовательский опыт (UX/UI). Постоянно изучаю передовые технологии и оптимизирую производительность приложений.",
-    featureCleanTitle: "Чистый код",
-    featureCleanDesc: "Модульная структура, читаемость и лучшие практики разработки.",
-    featureUxTitle: "UX & Перфоманс",
-    featureUxDesc: "Быстрая загрузка, доступность и плавные анимации.",
-    featureStackTitle: "Современный стек",
-    featureStackDesc: "TypeScript, React, Node.js и актуальный инструментарий.",
-    featureSolveTitle: "Решение задач",
-    featureSolveDesc: "Фокус на бизнес-логике и достижении измеримых результатов.",
+    aboutTitle: "ML-инженер с фокусом на NLP, LLM и робастность нейросетей",
+    aboutP1: "Я студент 4 курса бакалавриата «Прикладная математика и информатика» в РГУ им. А. Н. Косыгина. Мой главный интерес — обработка естественного языка (NLP), большие языковые модели (LLM) и эффективный информационный поиск.",
+    aboutP2: "На хакатоне «Альфа-Будущее» разработал интеллектуальную RAG-систему (ColBERT + FAISS + LangChain). В рамках ВКР провожу исследование того, как квантование (INT8, INT4) и дистилляция (DistilBERT, TinyBERT) влияют на робастность трансформеров перед адверсальными атаками (TextFooler, BERT-Attack).",
+    featureRagTitle: "RAG & Information Retrieval",
+    featureRagDesc: "Построение векторных индексов (FAISS, ChromaDB), ColBERT, подбор чанкинга и реранкинг.",
+    featureRobustTitle: "Робастность & Сжатие",
+    featureRobustDesc: "Исследование адверсальных атак, квантование весов (INT8/4), дистилляция знаний.",
+    featureLlmTitle: "LLM & Агенты",
+    featureLlmDesc: "Оркестрация агентов на LangChain/LlamaIndex, тонкая настройка LoRA/QLoRA, промпт-инжиниринг.",
+    featureMathTitle: "Математический фундамент",
+    featureMathDesc: "Теория вероятностей, статистика, линейная алгебра и алгоритмическая база.",
     infoNameLabel: "Имя:",
-    infoLocationLabel: "Локация:",
-    infoLocationVal: "Москва, Россия (Удаленно)",
-    infoEmailLabel: "Email:",
     infoSpecialtyLabel: "Специализация:",
-    infoSpecialtyVal: "Frontend / Full-Stack",
+    infoSpecialtyVal: "Junior ML Engineer / NLP",
+    infoLocationLabel: "Локация:",
+    infoLocationVal: "Москва (Ищу стажировку / Junior)",
+    infoEmailLabel: "Email:",
+    infoPhoneLabel: "Телефон:",
+    infoEduLabel: "ВУЗ:",
+    infoEduVal: "РГУ им. А. Н. Косыгина (ПМИ, 2023–2027)",
     skillsTag: "Стек технологий",
     skillsTitle: "Инструменты и навыки",
-    skillsSubtitle: "Технологии, которые я использую для решения реальных задач",
-    skillCatFrontend: "Frontend разработка",
-    skillCatBackend: "Backend & Базы данных",
-    skillCatTools: "Инструменты & DevOps",
-    skillCatSoft: "Методологии & Soft Skills",
-    projectsTag: "Портфолио",
-    projectsTitle: "Избранные проекты",
-    projectsSubtitle: "Некоторые из моих недавних работ и пет-проектов",
-    filterAll: "Все",
-    filterFullstack: "Full-Stack",
-    filterFrontend: "Frontend",
-    filterBackend: "Сервисы & API",
-    btnLive: "Демо",
-    btnCode: "GitHub",
-    expTag: "Траектория",
-    expTitle: "Опыт и образование",
-    expSubtitle: "Мой профессиональный путь и ключевые этапы",
-    exp1Date: "2024 — Настоящее время",
-    exp1Role: "Frontend / Full-Stack Разработчик",
-    exp1Company: "Freelance & Pet-проекты",
-    exp1Desc: "Разработка современных веб-приложений с использованием React, TypeScript, Tailwind CSS и REST API. Проектирование UI/UX и внедрение адаптивной верстки.",
-    exp2Date: "2023 — 2024",
-    exp2Role: "Младший веб-разработчик",
-    exp2Company: "Коммерческие проекты",
-    exp2Desc: "Создание интерактивных компонентов, интеграция сторонних API, оптимизация скорости загрузки страниц и верстка под мобильные устройства.",
-    exp3Date: "2021 — 2023",
-    exp3Role: "Базовое образование & Изучение CS",
-    exp3Company: "Курсы, практика и самообразование",
-    exp3Desc: "Углубленное изучение JavaScript, алгоритмов, структур данных, архитектуры баз данных и паттернов проектирования ПО.",
+    skillsSubtitle: "Стек машинного обучения, обработки языка и работы с данными",
+    skillCatMl: "Python & Machine Learning",
+    skillCatNlp: "NLP, LLM & Поиск",
+    skillCatRobust: "Робастность & Сжатие",
+    skillCatTools: "Инфраструктура & Базы",
+    researchTag: "Научная деятельность",
+    researchTitle: "Исследование робастности квантованных и дистиллированных моделей",
+    researchSubtitle: "Выпускная квалификационная работа (ВКР 2026–2027)",
+    projectsTag: "Практический опыт",
+    projectsTitle: "Проекты и хакатоны",
+    projectsSubtitle: "Ключевые инженерные решения в области NLP и генеративного AI",
+    filterAll: "Все работы",
+    filterRag: "RAG & LLM",
+    filterResearch: "Научные исследования",
+    filterMl: "ML & Данные",
+    btnDetails: "Подробнее",
+    btnGithub: "GitHub",
+    eduTag: "Траектория",
+    eduTitle: "Образование и курсы",
+    eduSubtitle: "Фундаментальная подготовка и профильные программы обучения",
     contactTag: "Контакты",
-    contactTitle: "Давайте работать вместе",
-    contactSubtitle: "Всегда открыт для предложений, интересных проектов и обсуждения идей",
+    contactTitle: "Открыт к предложениям",
+    contactSubtitle: "Ищу стажировку или Junior позицию ML-инженера в амбициозной команде",
     contactInfoTitle: "Связаться со мной",
-    contactInfoDesc: "Напишите мне в Telegram или отправьте письмо на почту. Я обычно отвечаю в течение нескольких часов!",
+    contactInfoDesc: "Напишите мне в Telegram или отправьте письмо на почту. Всегда открыт к профессиональному диалогу и техническим интервью!",
     btnCopy: "Копировать",
-    copiedToast: "Скопировано в буфер!",
+    copiedToast: "Скопировано в буфер обмена!",
     formName: "Ваше имя",
     formEmail: "Ваш Email",
-    formMessage: "Сообщение",
-    formPlaceholderName: "Иван Иванов",
-    formPlaceholderEmail: "ivan@example.com",
-    formPlaceholderMessage: "Привет, Степан! Хочу обсудить проект...",
+    formMessage: "Сообщение или приглашение",
+    formPlaceholderName: "Имя или компания",
+    formPlaceholderEmail: "hr@company.com",
+    formPlaceholderMessage: "Здравствуйте, Степан! Хотим пригласить вас на собеседование...",
     formSubmit: "Отправить сообщение",
-    formSentSuccess: "Спасибо! Ваше сообщение принято к отправке.",
-    footerText: "© 2026 Степан. Все права защищены.",
+    formSentSuccess: "Спасибо за сообщение! Я обязательно свяжусь с вами.",
+    footerText: "© 2026 Степан Прибытков · Junior ML Engineer",
     typingRoles: [
-      "Frontend Developer",
-      "Full-Stack Разработчик",
-      "React & TypeScript",
-      "Создатель веб-приложений"
+      "Junior ML Engineer",
+      "NLP & LLM Researcher",
+      "RAG Systems Specialist",
+      "PyTorch & Transformers",
+      "Robustness & Quantization"
     ]
   },
   en: {
     navAbout: "About",
     navSkills: "Skills",
+    navResearch: "Research",
     navProjects: "Projects",
-    navExperience: "Experience",
+    navEducation: "Education",
     navContact: "Contact",
-    statusAvailable: "Available for new projects",
-    heroGreeting: "Hello! I'm Stepan —",
-    heroDesc: "Building fast, scalable, and intuitive web applications with modern tech stack. Turning complex ideas into elegant, production-ready code.",
+    statusAvailable: "Looking for ML Engineer Internship",
+    heroGreeting: "Hello! I'm Stepan Pribytkov —",
+    heroDesc: "Senior student in Applied Mathematics & CS. Focusing on NLP & LLMs: building intelligent RAG systems, researching adversarial robustness of quantized & distilled language models.",
     btnProjects: "View Projects",
     btnContact: "Get In Touch",
-    btnResume: "Resume / CV",
-    statExp: "Years Experience",
-    statProjects: "Completed Projects",
-    statCommits: "Yearly Commits",
-    statPassion: "Attention to Detail",
+    btnResume: "Resume / CV (PDF)",
+    statRecall: "Recall@10 in RAG Retrieval",
+    statDataset: "Records in Dataset",
+    statLatency: "p95 Response Latency",
+    statCourse: "Year CS & Applied Math",
     aboutTag: "About Me",
-    aboutTitle: "Passionate developer crafting digital products with care",
-    aboutP1: "Hi! My name is Stepan. I am a web developer with a passion for building modern user interfaces and robust web architecture.",
-    aboutP2: "My focus is clean, maintainable code, responsive web design, and delivering seamless user experiences (UX/UI). Constantly learning cutting-edge technologies and tuning web performance.",
-    featureCleanTitle: "Clean Code",
-    featureCleanDesc: "Modular architecture, readability, and modern engineering standards.",
-    featureUxTitle: "UX & Performance",
-    featureUxDesc: "Fast loading times, accessibility, and delightful animations.",
-    featureStackTitle: "Modern Tech Stack",
-    featureStackDesc: "TypeScript, React, Node.js and current best-of-breed tools.",
-    featureSolveTitle: "Problem Solver",
-    featureSolveDesc: "Laser-focused on solving business challenges with measurable impact.",
+    aboutTitle: "ML Engineer focused on NLP, LLMs, and Model Robustness",
+    aboutP1: "I am a 4th-year undergraduate student in Applied Mathematics and Computer Science at Kosygin Russian State University. My core passions are Natural Language Processing (NLP), Large Language Models (LLMs), and high-performance Information Retrieval.",
+    aboutP2: "At the 'Alfa-Future' Hackathon, I developed an intelligent RAG system (ColBERT + FAISS + LangChain). In my Bachelor thesis, I am investigating how quantization (INT8, INT4) and knowledge distillation (DistilBERT, TinyBERT) impact transformer robustness against adversarial attacks (TextFooler, BERT-Attack).",
+    featureRagTitle: "RAG & Information Retrieval",
+    featureRagDesc: "Vector indexing (FAISS, ChromaDB), ColBERT, chunking optimization, and cross-encoder reranking.",
+    featureRobustTitle: "Robustness & Compression",
+    featureRobustDesc: "Adversarial attack benchmarking, model quantization (INT8/4), knowledge distillation.",
+    featureLlmTitle: "LLMs & Agents",
+    featureLlmDesc: "Agent orchestration via LangChain/LlamaIndex, LoRA/QLoRA fine-tuning, prompt engineering.",
+    featureMathTitle: "Mathematical Foundations",
+    featureMathDesc: "Strong background in probability theory, mathematical statistics, linear algebra, and optimization.",
     infoNameLabel: "Name:",
-    infoLocationLabel: "Location:",
-    infoLocationVal: "Moscow, Russia (Remote)",
-    infoEmailLabel: "Email:",
     infoSpecialtyLabel: "Specialty:",
-    infoSpecialtyVal: "Frontend / Full-Stack",
+    infoSpecialtyVal: "Junior ML Engineer / NLP",
+    infoLocationLabel: "Location:",
+    infoLocationVal: "Moscow, Russia (Open for Internship / Junior)",
+    infoEmailLabel: "Email:",
+    infoPhoneLabel: "Phone:",
+    infoEduLabel: "University:",
+    infoEduVal: "Kosygin State University (AM&CS, 2023–2027)",
     skillsTag: "Tech Stack",
     skillsTitle: "Skills & Technologies",
-    skillsSubtitle: "The tools and technologies I use to build robust software",
-    skillCatFrontend: "Frontend Development",
-    skillCatBackend: "Backend & Databases",
-    skillCatTools: "Tools & DevOps",
-    skillCatSoft: "Methodologies & Soft Skills",
-    projectsTag: "Portfolio",
-    projectsTitle: "Featured Projects",
-    projectsSubtitle: "A selection of my recent works and open-source pet projects",
-    filterAll: "All",
-    filterFullstack: "Full-Stack",
-    filterFrontend: "Frontend",
-    filterBackend: "Services & API",
-    btnLive: "Live Demo",
-    btnCode: "GitHub",
-    expTag: "Trajectory",
-    expTitle: "Experience & Education",
-    expSubtitle: "My professional journey and career milestones",
-    exp1Date: "2024 — Present",
-    exp1Role: "Frontend / Full-Stack Developer",
-    exp1Company: "Freelance & Pet Projects",
-    exp1Desc: "Building modern web applications using React, TypeScript, Tailwind CSS, and RESTful APIs. UI/UX design and responsive layout implementation.",
-    exp2Date: "2023 — 2024",
-    exp2Role: "Junior Web Developer",
-    exp2Company: "Commercial Projects",
-    exp2Desc: "Crafting interactive UI components, integrating third-party APIs, optimizing page speed, and mobile responsiveness.",
-    exp3Date: "2021 — 2023",
-    exp3Role: "Core Foundations & CS Studies",
-    exp3Company: "Courses, Practice & Self-learning",
-    exp3Desc: "In-depth study of JavaScript, data structures, algorithms, database architectures, and software design patterns.",
+    skillsSubtitle: "Machine learning, natural language processing, and data engineering toolkit",
+    skillCatMl: "Python & Machine Learning",
+    skillCatNlp: "NLP, LLMs & Retrieval",
+    skillCatRobust: "Robustness & Compression",
+    skillCatTools: "Infrastructure & Databases",
+    researchTag: "Research",
+    researchTitle: "Adversarial Robustness of Quantized & Distilled Models",
+    researchSubtitle: "Bachelor Thesis (2026–2027)",
+    projectsTag: "Practical Work",
+    projectsTitle: "Projects & Hackathons",
+    projectsSubtitle: "Key engineering solutions in NLP, RAG, and applied ML",
+    filterAll: "All Works",
+    filterRag: "RAG & LLMs",
+    filterResearch: "Research",
+    filterMl: "ML & Data",
+    btnDetails: "Details",
+    btnGithub: "GitHub",
+    eduTag: "Trajectory",
+    eduTitle: "Education & Courses",
+    eduSubtitle: "Academic foundations and specialized deep learning programs",
     contactTag: "Contact",
-    contactTitle: "Let's Work Together",
-    contactSubtitle: "Open for freelance opportunities, full-time roles, and interesting collaborative projects",
+    contactTitle: "Let's Connect",
+    contactSubtitle: "Open for Machine Learning Engineer internships and junior positions",
     contactInfoTitle: "Get in touch",
-    contactInfoDesc: "Drop me a message on Telegram or send me an email. I usually reply within a couple of hours!",
+    contactInfoDesc: "Reach out via Telegram or send an email. Always open to technical discussions and interviews!",
     btnCopy: "Copy",
     copiedToast: "Copied to clipboard!",
     formName: "Your Name",
     formEmail: "Your Email",
-    formMessage: "Message",
-    formPlaceholderName: "John Doe",
-    formPlaceholderEmail: "john@example.com",
-    formPlaceholderMessage: "Hi Stepan! Let's discuss a project...",
+    formMessage: "Message or Invitation",
+    formPlaceholderName: "Name or Company",
+    formPlaceholderEmail: "hr@company.com",
+    formPlaceholderMessage: "Hello Stepan! We would like to invite you for an interview...",
     formSubmit: "Send Message",
-    formSentSuccess: "Thank you! Your message was submitted successfully.",
-    footerText: "© 2026 Stepan. All rights reserved.",
+    formSentSuccess: "Thank you for reaching out! I will get back to you shortly.",
+    footerText: "© 2026 Stepan Pribytkov · Junior ML Engineer",
     typingRoles: [
-      "Frontend Developer",
-      "Full-Stack Engineer",
-      "React & TypeScript",
-      "Web App Creator"
+      "Junior ML Engineer",
+      "NLP & LLM Researcher",
+      "RAG Systems Specialist",
+      "PyTorch & Transformers",
+      "Robustness & Quantization"
     ]
   }
 };
@@ -192,7 +184,7 @@ const prefersDarkScheme = window.matchMedia("(prefers-color-scheme: dark)");
 function setTheme(theme) {
   document.documentElement.setAttribute("data-theme", theme);
   localStorage.setItem("preferred_theme", theme);
-  const icon = themeToggleBtn.querySelector("i");
+  const icon = themeToggleBtn?.querySelector("i");
   if (icon) {
     icon.className = theme === "light" ? "ri-moon-line" : "ri-sun-line";
   }
@@ -229,15 +221,15 @@ function handleTyping() {
     charIndex++;
   }
 
-  let speed = isDeleting ? 40 : 90;
+  let speed = isDeleting ? 35 : 85;
 
   if (!isDeleting && charIndex === currentRole.length) {
-    speed = 1800; // Pause at full word
+    speed = 1900; // Pause on complete title
     isDeleting = true;
   } else if (isDeleting && charIndex === 0) {
     isDeleting = false;
     typingIndex++;
-    speed = 400; // Pause before next word
+    speed = 350;
   }
 
   clearTimeout(typingTimeout);
@@ -254,7 +246,6 @@ function applyLanguage(lang) {
     langToggleBtn.textContent = lang.toUpperCase();
   }
 
-  // Update text elements with data-i18n
   document.querySelectorAll("[data-i18n]").forEach((el) => {
     const key = el.getAttribute("data-i18n");
     if (translations[lang] && translations[lang][key]) {
@@ -262,7 +253,6 @@ function applyLanguage(lang) {
     }
   });
 
-  // Update placeholder attributes
   document.querySelectorAll("[data-i18n-ph]").forEach((el) => {
     const key = el.getAttribute("data-i18n-ph");
     if (translations[lang] && translations[lang][key]) {
@@ -270,7 +260,6 @@ function applyLanguage(lang) {
     }
   });
 
-  // Restart typing animation
   charIndex = 0;
   isDeleting = false;
   handleTyping();
@@ -296,14 +285,14 @@ if (canvas) {
   });
 
   const particles = [];
-  const particleCount = Math.min(Math.floor(window.innerWidth / 25), 45);
+  const particleCount = Math.min(Math.floor(window.innerWidth / 28), 45);
 
   class Particle {
     constructor() {
       this.x = Math.random() * width;
       this.y = Math.random() * height;
-      this.vx = (Math.random() - 0.5) * 0.4;
-      this.vy = (Math.random() - 0.5) * 0.4;
+      this.vx = (Math.random() - 0.5) * 0.45;
+      this.vy = (Math.random() - 0.5) * 0.45;
       this.radius = Math.random() * 2 + 1;
     }
 
@@ -318,7 +307,7 @@ if (canvas) {
     draw() {
       ctx.beginPath();
       ctx.arc(this.x, this.y, this.radius, 0, Math.PI * 2);
-      ctx.fillStyle = "rgba(99, 102, 241, 0.4)";
+      ctx.fillStyle = "rgba(99, 102, 241, 0.45)";
       ctx.fill();
     }
   }
@@ -343,7 +332,7 @@ if (canvas) {
           ctx.beginPath();
           ctx.moveTo(particles[i].x, particles[i].y);
           ctx.lineTo(particles[j].x, particles[j].y);
-          ctx.strokeStyle = `rgba(99, 102, 241, ${0.15 * (1 - dist / 130)})`;
+          ctx.strokeStyle = `rgba(99, 102, 241, ${0.16 * (1 - dist / 130)})`;
           ctx.lineWidth = 0.8;
           ctx.stroke();
         }
@@ -363,7 +352,7 @@ if (cursorGlow && window.matchMedia("(hover: hover)").matches) {
   });
 }
 
-// --- Navbar Scroll & Active Link ---
+// --- Navbar Scroll & Active Section Indicator ---
 const navbar = document.querySelector(".navbar");
 const navLinks = document.querySelectorAll(".nav-link");
 const sections = document.querySelectorAll("section[id]");
@@ -375,7 +364,6 @@ window.addEventListener("scroll", () => {
     navbar.classList.remove("scrolled");
   }
 
-  // Back to top button visibility
   const backToTopBtn = document.getElementById("back-to-top");
   if (backToTopBtn) {
     if (window.scrollY > 400) {
@@ -385,7 +373,6 @@ window.addEventListener("scroll", () => {
     }
   }
 
-  // Active section indicator
   let currentSecId = "";
   sections.forEach((section) => {
     const sectionTop = section.offsetTop - 120;
@@ -418,7 +405,6 @@ if (burgerBtn && navList) {
     }
   });
 
-  // Close menu when clicking a link
   navList.querySelectorAll(".nav-link").forEach((link) => {
     link.addEventListener("click", () => {
       navList.classList.remove("open");
@@ -472,7 +458,6 @@ function showToast(message, iconClass = "ri-checkbox-circle-fill") {
 
   container.appendChild(toast);
 
-  // Trigger animation
   requestAnimationFrame(() => {
     toast.classList.add("show");
   });
@@ -485,20 +470,21 @@ function showToast(message, iconClass = "ri-checkbox-circle-fill") {
   }, 3200);
 }
 
-// --- Copy Email to Clipboard ---
-const copyEmailBtn = document.getElementById("copy-email-btn");
-if (copyEmailBtn) {
-  copyEmailBtn.addEventListener("click", () => {
-    const emailToCopy = copyEmailBtn.getAttribute("data-email") || "stepan.developer@example.com";
-    navigator.clipboard.writeText(emailToCopy).then(() => {
-      showToast(translations[currentLang].copiedToast);
-    }).catch(() => {
-      showToast("Email: " + emailToCopy);
-    });
+// --- Copy to Clipboard Buttons ---
+document.querySelectorAll(".copy-btn").forEach((btn) => {
+  btn.addEventListener("click", () => {
+    const textToCopy = btn.getAttribute("data-copy");
+    if (textToCopy) {
+      navigator.clipboard.writeText(textToCopy).then(() => {
+        showToast(translations[currentLang].copiedToast);
+      }).catch(() => {
+        showToast(textToCopy);
+      });
+    }
   });
-}
+});
 
-// --- Contact Form Submission Mock ---
+// --- Contact Form Submission Handler ---
 const contactForm = document.getElementById("contact-form");
 if (contactForm) {
   contactForm.addEventListener("submit", (e) => {

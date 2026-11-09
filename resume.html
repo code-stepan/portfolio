@@ -1,0 +1,463 @@
+<!DOCTYPE html>
+<html lang="ru" data-theme="dark">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Прибытков Степан — Резюме | Junior ML Engineer</title>
+  
+  <meta name="description" content="Резюме: Прибытков Степан Евгеньевич — Junior ML Engineer (NLP, LLM, PyTorch, RAG).">
+  
+  <!-- Favicon -->
+  <link rel="icon" href="data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220%22%20viewBox=%220 0 100 100%22><text y=%22.9em%22 font-size=%2290%22>🧠</text></svg>">
+
+  <!-- Google Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=JetBrains+Mono:wght@400;500;600&display=swap" rel="stylesheet">
+
+  <!-- Remix Icon CDN -->
+  <link href="https://cdn.jsdelivr.net/npm/remixicon@4.2.0/fonts/remixicon.css" rel="stylesheet">
+
+  <style>
+    :root {
+      --bg: #0b0f19;
+      --card-bg: #111827;
+      --border: rgba(255, 255, 255, 0.1);
+      --text: #f3f4f6;
+      --text-muted: #9ca3af;
+      --accent: #6366f1;
+      --accent-cyan: #06b6d4;
+      --accent-grad: linear-gradient(135deg, #6366f1, #06b6d4);
+      --tag-bg: rgba(99, 102, 241, 0.12);
+    }
+
+    [data-theme="light"] {
+      --bg: #f8fafc;
+      --card-bg: #ffffff;
+      --border: rgba(0, 0, 0, 0.1);
+      --text: #0f172a;
+      --text-muted: #475569;
+      --accent: #4f46e5;
+      --accent-cyan: #0891b2;
+      --accent-grad: linear-gradient(135deg, #4f46e5, #0891b2);
+      --tag-bg: rgba(79, 70, 229, 0.08);
+    }
+
+    * { box-sizing: border-box; margin: 0; padding: 0; }
+
+    body {
+      font-family: 'Inter', sans-serif;
+      background: var(--bg);
+      color: var(--text);
+      line-height: 1.6;
+      padding: 2.5rem 1rem;
+    }
+
+    .container {
+      max-width: 860px;
+      margin: 0 auto;
+    }
+
+    /* Actions Header (hidden on print) */
+    .action-bar {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      margin-bottom: 2rem;
+      gap: 1rem;
+    }
+
+    .btn {
+      display: inline-flex;
+      align-items: center;
+      gap: 0.5rem;
+      padding: 0.65rem 1.25rem;
+      font-size: 0.9rem;
+      font-weight: 600;
+      border-radius: 8px;
+      text-decoration: none;
+      cursor: pointer;
+      border: 1px solid var(--border);
+      background: var(--card-bg);
+      color: var(--text);
+      transition: all 0.2s ease;
+    }
+
+    .btn:hover {
+      border-color: var(--accent);
+      transform: translateY(-2px);
+    }
+
+    .btn-primary {
+      background: var(--accent-grad);
+      color: #fff;
+      border: none;
+    }
+
+    /* Resume Paper Card */
+    .resume-sheet {
+      background: var(--card-bg);
+      border: 1px solid var(--border);
+      border-radius: 16px;
+      padding: 3rem;
+      box-shadow: 0 10px 30px rgba(0,0,0,0.15);
+    }
+
+    .resume-header {
+      border-bottom: 2px solid var(--border);
+      padding-bottom: 2rem;
+      margin-bottom: 2rem;
+      display: flex;
+      justify-content: space-between;
+      align-items: flex-start;
+      flex-wrap: wrap;
+      gap: 1.5rem;
+    }
+
+    .resume-name {
+      font-size: 2.2rem;
+      font-weight: 800;
+      letter-spacing: -0.02em;
+    }
+
+    .resume-title {
+      font-size: 1.25rem;
+      color: var(--accent);
+      font-weight: 600;
+      margin-top: 0.35rem;
+    }
+
+    .resume-contacts {
+      list-style: none;
+      font-size: 0.9rem;
+      color: var(--text-muted);
+      display: flex;
+      flex-direction: column;
+      gap: 0.45rem;
+    }
+
+    .resume-contacts li {
+      display: flex;
+      align-items: center;
+      gap: 0.5rem;
+    }
+
+    .resume-contacts li a {
+      color: var(--text);
+      text-decoration: none;
+      transition: color 0.2s ease;
+    }
+
+    .resume-contacts li a:hover {
+      color: var(--accent);
+    }
+
+    .resume-section {
+      margin-bottom: 2rem;
+    }
+
+    .section-heading {
+      font-size: 1.15rem;
+      font-weight: 700;
+      text-transform: uppercase;
+      letter-spacing: 0.05em;
+      color: var(--accent);
+      margin-bottom: 1rem;
+      display: flex;
+      align-items: center;
+      gap: 0.5rem;
+      border-bottom: 1px dashed var(--border);
+      padding-bottom: 0.4rem;
+    }
+
+    .skills-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+      gap: 1rem;
+    }
+
+    .skill-block {
+      background: var(--tag-bg);
+      border: 1px solid var(--border);
+      padding: 0.9rem 1rem;
+      border-radius: 8px;
+    }
+
+    .skill-block h4 {
+      font-size: 0.92rem;
+      margin-bottom: 0.35rem;
+      color: var(--text);
+    }
+
+    .skill-block p {
+      font-size: 0.85rem;
+      color: var(--text-muted);
+      line-height: 1.5;
+    }
+
+    .timeline-entry {
+      margin-bottom: 1.6rem;
+    }
+
+    .entry-header {
+      display: flex;
+      justify-content: space-between;
+      align-items: baseline;
+      flex-wrap: wrap;
+      margin-bottom: 0.25rem;
+    }
+
+    .entry-role {
+      font-size: 1.05rem;
+      font-weight: 700;
+    }
+
+    .entry-company {
+      color: var(--accent);
+      font-weight: 600;
+      font-size: 0.95rem;
+    }
+
+    .entry-date {
+      font-size: 0.85rem;
+      color: var(--text-muted);
+      font-family: 'JetBrains Mono', monospace;
+    }
+
+    .entry-badge {
+      display: inline-block;
+      font-size: 0.75rem;
+      font-weight: 600;
+      background: var(--tag-bg);
+      color: var(--accent);
+      padding: 0.15rem 0.5rem;
+      border-radius: 4px;
+      margin-top: 0.2rem;
+    }
+
+    .entry-desc {
+      font-size: 0.9rem;
+      color: var(--text-muted);
+      margin-top: 0.4rem;
+      line-height: 1.6;
+    }
+
+    .entry-list {
+      margin-top: 0.5rem;
+      padding-left: 1.25rem;
+      font-size: 0.88rem;
+      color: var(--text-muted);
+    }
+
+    .entry-list li {
+      margin-bottom: 0.35rem;
+      line-height: 1.55;
+    }
+
+    .entry-list li strong {
+      color: var(--text);
+    }
+
+    /* Print Styles */
+    @media print {
+      body {
+        background: #fff !important;
+        color: #000 !important;
+        padding: 0 !important;
+      }
+
+      .action-bar {
+        display: none !important;
+      }
+
+      .resume-sheet {
+        border: none !important;
+        box-shadow: none !important;
+        padding: 0 !important;
+        background: transparent !important;
+      }
+
+      .resume-header {
+        border-color: #e5e7eb !important;
+      }
+
+      .section-heading, .resume-title, .entry-company {
+        color: #1e1b4b !important;
+      }
+
+      .skill-block {
+        background: #f8fafc !important;
+        border-color: #e2e8f0 !important;
+      }
+
+      .resume-contacts li a, .entry-desc, .entry-list, .skill-block p {
+        color: #374151 !important;
+      }
+    }
+
+    @media (max-width: 600px) {
+      .resume-sheet { padding: 1.75rem; }
+      .resume-name { font-size: 1.8rem; }
+      .action-bar { flex-direction: column; align-items: stretch; }
+      .action-bar-right { display: flex; gap: 0.5rem; }
+    }
+  </style>
+</head>
+<body>
+
+  <div class="container">
+    <!-- Action Controls (hidden in print) -->
+    <div class="action-bar">
+      <a href="index.html" class="btn">
+        <i class="ri-arrow-left-line"></i> На главную портфолио
+      </a>
+      <div class="action-bar-right" style="display: flex; gap: 0.75rem;">
+        <button id="theme-btn" class="btn" title="Сменить тему">
+          <i class="ri-sun-line"></i> Тема
+        </button>
+        <button onclick="window.print()" class="btn btn-primary">
+          <i class="ri-printer-line"></i> Печать / Скачать PDF
+        </button>
+      </div>
+    </div>
+
+    <!-- Resume Paper -->
+    <article class="resume-sheet">
+      <!-- Header -->
+      <header class="resume-header">
+        <div>
+          <h1 class="resume-name">Прибытков Степан Евгеньевич</h1>
+          <h2 class="resume-title">Junior ML Engineer</h2>
+        </div>
+        <ul class="resume-contacts">
+          <li><i class="ri-map-pin-line"></i> Москва · Ищу стажировку ML-инженером</li>
+          <li><i class="ri-phone-line"></i> +7 (996) 287-63-74</li>
+          <li><i class="ri-mail-line"></i> <a href="mailto:code_stepan@mail.ru">code_stepan@mail.ru</a></li>
+          <li><i class="ri-telegram-line"></i> <a href="https://t.me/StepanPEme" target="_blank">@StepanPEme</a></li>
+          <li><i class="ri-github-line"></i> <a href="https://github.com/code-stepan" target="_blank">github.com/code-stepan</a></li>
+        </ul>
+      </header>
+
+      <!-- Summary -->
+      <section class="resume-section">
+        <h3 class="section-heading"><i class="ri-user-line"></i> О себе</h3>
+        <p class="entry-desc">
+          Студент 4 курса бакалавриата «Прикладная математика и информатика». Специализируюсь на <strong>NLP</strong> и <strong>LLM</strong>: на хакатоне разработал интеллектуальную RAG-систему, в рамках ВКР исследую влияние квантования и дистилляции на устойчивость языковых моделей к адверсальным атакам. Имею хорошую математическую и алгоритмическую базу. Открыт к предложениям о стажировке / junior-позиции ML-инженера.
+        </p>
+      </section>
+
+      <!-- Skills -->
+      <section class="resume-section">
+        <h3 class="section-heading"><i class="ri-cpu-line"></i> Навыки</h3>
+        <div class="skills-grid">
+          <div class="skill-block">
+            <h4>Python & ML</h4>
+            <p>Python, PyTorch, HuggingFace Transformers, scikit-learn, CatBoost, LightGBM, Pandas, NumPy</p>
+          </div>
+          <div class="skill-block">
+            <h4>NLP & LLM</h4>
+            <p>RAG (LangChain, LlamaIndex), FAISS, ChromaDB, ColBERT, Sentence-BERT, LoRA, QLoRA</p>
+          </div>
+          <div class="skill-block">
+            <h4>Робастность и сжатие моделей</h4>
+            <p>Адверсальные атаки (TextFooler, BERT-Attack), квантование (INT8, INT4), дистилляция (DistilBERT, TinyBERT)</p>
+          </div>
+          <div class="skill-block">
+            <h4>Инструменты и языки</h4>
+            <p>Git, Docker, Linux, SQL, FAISS-GPU | Русский (родной), Английский (B1)</p>
+          </div>
+        </div>
+      </section>
+
+      <!-- Scientific Research -->
+      <section class="resume-section">
+        <h3 class="section-heading"><i class="ri-microscope-line"></i> Научная работа</h3>
+        <div class="timeline-entry">
+          <div class="entry-header">
+            <span class="entry-role">Исследование робастности квантованных и дистиллированных моделей к адверсальным атакам</span>
+            <span class="entry-date">2026 — 2027</span>
+          </div>
+          <div class="entry-company">Выпускная квалификационная работа (ВКР)</div>
+          <p class="entry-desc">
+            Исследование того, как методы оптимизации моделей — квантование (INT8, INT4) и дистилляция знаний (DistilBERT, TinyBERT) — влияют на их уязвимость перед текстовыми адверсальными атаками: <em>TextFooler</em>, <em>BERT-Attack</em>, <em>DeepWordBug</em>.
+          </p>
+          <ul class="entry-list">
+            <li>Проведение экспериментов на датасетах классификации текста <strong>SST-2</strong> и <strong>AG News</strong>.</li>
+            <li>Расчет метрик устойчивости: <strong>Attack Success Rate (ASR)</strong> и <strong>Accuracy Under Attack</strong>.</li>
+            <li><strong>Первые результаты (SST-2, TextFooler):</strong> ASR у BERT-base (FP32) — <strong>41%</strong>, у INT8 — <strong>43%</strong>, у INT4 — <strong>56%</strong>, у TinyBERT — <strong>63%</strong>. При этом clean accuracy падает не более чем на <strong>2 п.п.</strong></li>
+          </ul>
+        </div>
+      </section>
+
+      <!-- Projects -->
+      <section class="resume-section">
+        <h3 class="section-heading"><i class="ri-terminal-box-line"></i> Проекты</h3>
+        
+        <div class="timeline-entry">
+          <div class="entry-header">
+            <span class="entry-role">Интеллектуальная RAG-система</span>
+            <span class="entry-date">12.2025</span>
+          </div>
+          <div class="entry-company">Хакатон «Альфа-Будущее» · Командный проект, диплом участника</div>
+          <span class="entry-badge">Python · PyTorch · FAISS-GPU · RAGatouille · LangChain · scikit-learn · Qwen2.5-7B</span>
+          <p class="entry-desc" style="margin-top: 0.6rem;">
+            Разработка интеллектуального RAG-ассистента на базе LLM для поиска и ответов на вопросы по внутренней базе знаний.
+          </p>
+          <ul class="entry-list">
+            <li>Собрал датасет на <strong>15 000 записей</strong> и очистил его: разработанный фильтр на основе TF-IDF устранил <strong>11%</strong> шума и дубликатов.</li>
+            <li>Спроектировал и реализовал ретривер на <strong>ColBERT (RAGatouille)</strong> с быстрым векторным индексом в <strong>FAISS-GPU</strong>. Отвечал за бенчмаркинг и оценку качества поиска.</li>
+            <li>Увеличил метрику <strong>Recall@10 с 62% до 81%</strong> за счет оптимизации чанкинга (512 токенов с перекрытием 64) и внедрения реранкинга.</li>
+            <li>В системе команды: оркестрация на LangChain и агент на <strong>Qwen2.5-7B-Instruct</strong>, планирующий шаги, валидирующий свои ответы и выполняющий повторный поиск при противоречиях в источниках. Время ответа: <strong>1.8 с (p95)</strong> со ссылками на первоисточники.</li>
+          </ul>
+        </div>
+      </section>
+
+      <!-- Education -->
+      <section class="resume-section">
+        <h3 class="section-heading"><i class="ri-graduation-cap-line"></i> Образование</h3>
+        <div class="timeline-entry">
+          <div class="entry-header">
+            <span class="entry-role">РГУ им. А. Н. Косыгина</span>
+            <span class="entry-date">2023 — 2027</span>
+          </div>
+          <div class="entry-company">Бакалавриат «Прикладная математика и информатика» (ПМИ), 4 курс</div>
+          <p class="entry-desc">
+            Математический анализ, линейная алгебра, теория вероятностей и математическая статистика, методы оптимизации, дискретная математика, алгоритмы и структуры данных.
+          </p>
+        </div>
+      </section>
+
+      <!-- Additional Training -->
+      <section class="resume-section" style="margin-bottom: 0;">
+        <h3 class="section-heading"><i class="ri-award-line"></i> Курсы и дополнительное обучение</h3>
+        <ul class="entry-list" style="padding-left: 1.25rem;">
+          <li>
+            <strong>Deep Learning School (ФПМИ МФТИ), 2026:</strong> Введение в машинное и глубокое обучение (ML & DL), Computer Vision, Natural Language Processing.
+          </li>
+          <li>
+            <strong>VK Education, 2026:</strong> Открытый лекторий по основам машинного обучения, информационный поиск и ранжирование.
+          </li>
+          <li>
+            <strong>Spectral::Technologies, Stepik, 2026:</strong> Курсы по алгоритмам, структурам данных и Reinforcement Learning.
+          </li>
+        </ul>
+      </section>
+    </article>
+  </div>
+
+  <script>
+    // Theme toggle in resume
+    const themeBtn = document.getElementById("theme-btn");
+    const currentTheme = localStorage.getItem("preferred_theme") || "dark";
+    document.documentElement.setAttribute("data-theme", currentTheme);
+
+    if (themeBtn) {
+      themeBtn.addEventListener("click", () => {
+        const active = document.documentElement.getAttribute("data-theme") === "light" ? "dark" : "light";
+        document.documentElement.setAttribute("data-theme", active);
+        localStorage.setItem("preferred_theme", active);
+      });
+    }
+  </script>
+</body>
+</html>
