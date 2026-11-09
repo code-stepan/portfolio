@@ -543,8 +543,7 @@ if (contactForm) {
   });
 }
 
-// --- Back to top scroll ---
-const backToTopBtn = document.getElementById("back-to-top");
+// --- Back to top scroll (uses backToTopBtn declared above at scroll handler) ---
 if (backToTopBtn) {
   backToTopBtn.addEventListener("click", () => {
     window.scrollTo({ top: 0, behavior: "smooth" });
