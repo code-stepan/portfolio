@@ -72,84 +72,7 @@
   );
   document.querySelectorAll('[data-reveal]').forEach((el) => revealObserver.observe(el));
 
-  /* ---------- Terminal staggered reveal ---------- */
 
-  const terminal = document.getElementById('terminal');
-  const tLines = Array.from(document.querySelectorAll('#terminal-body .t-line'));
-
-  const terminalObserver = new IntersectionObserver(
-    (entries) => {
-      if (entries[0].isIntersecting) {
-        tLines.forEach((line, i) => {
-          setTimeout(() => line.classList.add('visible'), 250 + i * 350);
-        });
-        terminalObserver.disconnect();
-      }
-    },
-    { threshold: 0.3 }
-  );
-  if (terminal) terminalObserver.observe(terminal);
-
-  /* ---------- Command palette ---------- */
-
-  const cmdOverlay = document.getElementById('cmd-overlay');
-  const cmdInput = document.getElementById('cmd-input');
-  const cmdItems = Array.from(document.querySelectorAll('.cmd-item'));
-
-  function openPalette() {
-    cmdOverlay.classList.add('open');
-    cmdOverlay.setAttribute('aria-hidden', 'false');
-    cmdInput.value = '';
-    filterPalette('');
-    setTimeout(() => cmdInput.focus(), 30);
-  }
-
-  function closePalette() {
-    cmdOverlay.classList.remove('open');
-    cmdOverlay.setAttribute('aria-hidden', 'true');
-  }
-
-  function filterPalette(query) {
-    const q = query.trim().toLowerCase();
-    cmdItems.forEach((item) => {
-      const text = item.textContent.toLowerCase();
-      item.style.display = text.includes(q) ? '' : 'none';
-    });
-  }
-
-  document.getElementById('cmd-open').addEventListener('click', openPalette);
-  cmdOverlay.addEventListener('click', (e) => {
-    if (e.target === cmdOverlay) closePalette();
-  });
-  cmdInput.addEventListener('input', () => filterPalette(cmdInput.value));
-
-  cmdItems.forEach((item) => {
-    item.addEventListener('click', () => {
-      const target = item.getAttribute('data-cmd-target');
-      closePalette();
-      if (target.startsWith('#') && target.length > 1) {
-        const el = document.querySelector(target);
-        if (el) el.scrollIntoView({ behavior: 'smooth' });
-      } else if (target.startsWith('http')) {
-        window.open(target, '_blank', 'noopener');
-      }
-    });
-  });
-
-  document.addEventListener('keydown', (e) => {
-    const typing =
-      e.target.tagName === 'INPUT' ||
-      e.target.tagName === 'TEXTAREA' ||
-      e.target.isContentEditable;
-
-    if (e.key === '/' && !typing && !cmdOverlay.classList.contains('open')) {
-      e.preventDefault();
-      openPalette();
-    }
-    if (e.key === 'Escape' && cmdOverlay.classList.contains('open')) {
-      closePalette();
-    }
-  });
 
   /* ---------- Project filters ---------- */
 
@@ -184,37 +107,6 @@
     }, 3200);
   }
 
-  /* ---------- Copy buttons ---------- */
-
-  document.querySelectorAll('.copy-btn').forEach((btn) => {
-    btn.addEventListener('click', () => {
-      const text = btn.getAttribute('data-copy');
-      if (navigator.clipboard && navigator.clipboard.writeText) {
-        navigator.clipboard.writeText(text).then(
-          () => showToast('Скопировано в буфер обмена!'),
-          () => fallbackCopy(text)
-        );
-      } else {
-        fallbackCopy(text);
-      }
-    });
-  });
-
-  function fallbackCopy(text) {
-    const ta = document.createElement('textarea');
-    ta.value = text;
-    ta.style.position = 'fixed';
-    ta.style.opacity = '0';
-    document.body.appendChild(ta);
-    ta.select();
-    try {
-      document.execCommand('copy');
-      showToast('Скопировано в буфер обмена!');
-    } catch (err) {
-      showToast('Не удалось скопировать');
-    }
-    ta.remove();
-  }
 
   /* ---------- Contact form (simulated) ---------- */
 

@@ -13,7 +13,7 @@
   <meta property="og:title" content="Прибытков Степан — Junior ML Engineer / Data Scientist (NLP / LLM)">
   <meta property="og:description" content="ML-системы от данных до сервиса: кредитный скоринг, RAG с гибридным поиском и реранкингом, робастность квантованных моделей. Ищу стажировку или Junior-позицию.">
 
-  <link rel="icon" href="data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 100 100%22><text y=%22.9em%22 font-size=%2290%22 font-family=%22monospace%22 fill=%22%23E3B341%22>$</text></svg>">
+  <link rel="icon" href="data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 100 100%22><rect width=%22100%22 height=%22100%22 fill=%22%230000F2%22/><text x=%2250%22 y=%2270%22 font-size=%2258%22 font-family=%22Arial%22 font-weight=%22bold%22 fill=%22white%22 text-anchor=%22middle%22>С</text></svg>">
 
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -21,34 +21,15 @@
 
   <link href="https://cdn.jsdelivr.net/npm/remixicon@4.2.0/fonts/remixicon.css" rel="stylesheet">
 
-  <link rel="stylesheet" href="css/style.css?v=2">
+  <link rel="stylesheet" href="css/style.css?v=3">
 </head>
 <body>
 
   <div class="grid-overlay" aria-hidden="true"></div>
 
-  <div class="cmd-overlay" id="cmd-overlay" aria-hidden="true">
-    <div class="cmd-box" role="dialog" aria-label="Командная палитра">
-      <div class="cmd-head">
-        <span class="cmd-prompt">&gt;</span>
-        <input type="text" id="cmd-input" placeholder="Введите команду..." autocomplete="off">
-        <kbd>esc</kbd>
-      </div>
-      <div class="cmd-list" id="cmd-list">
-        <button class="cmd-item" data-cmd-target="#about"><span class="cmd-num">#01</span><span>Обо мне</span></button>
-        <button class="cmd-item" data-cmd-target="#skills"><span class="cmd-num">#02</span><span>Навыки</span></button>
-        <button class="cmd-item" data-cmd-target="#research"><span class="cmd-num">#03</span><span>Научная работа</span></button>
-        <button class="cmd-item" data-cmd-target="#projects"><span class="cmd-num">#04</span><span>Проекты</span></button>
-        <button class="cmd-item" data-cmd-target="#education"><span class="cmd-num">#05</span><span>Образование</span></button>
-        <button class="cmd-item" data-cmd-target="#contact"><span class="cmd-num">#06</span><span>Контакты</span></button>
-        <button class="cmd-item" data-cmd-target="https://github.com/code-stepan"><span class="cmd-num">#gh</span><span>GitHub профиль</span></button>
-      </div>
-    </div>
-  </div>
-
   <header class="navbar" id="navbar">
     <div class="container nav-inner">
-      <a href="#top" class="logo"><span class="logo-mark">$</span>stepan.ml</a>
+      <a href="#top" class="logo">Прибытков Степан</a>
       <nav class="nav-links" id="nav-links">
         <a href="#about" class="nav-link">Обо мне</a>
         <a href="#skills" class="nav-link">Навыки</a>
@@ -58,7 +39,6 @@
         <a href="#contact" class="nav-link">Контакты</a>
       </nav>
       <div class="nav-actions">
-        <button class="btn-ghost btn-sm" id="cmd-open" aria-label="Командная палитра"><i class="ri-terminal-line"></i><kbd>/</kbd></button>
         <a href="#contact" class="btn-primary btn-sm">Связаться</a>
         <button class="burger" id="burger" aria-label="Меню"><span></span><span></span></button>
       </div>
@@ -86,24 +66,22 @@
           </div>
         </div>
         <div class="hero-visual" data-reveal>
-          <div class="terminal" id="terminal">
-            <div class="terminal-bar">
-              <span class="t-dot"></span><span class="t-dot"></span><span class="t-dot"></span>
-              <span class="terminal-title">stepan@ml: ~</span>
-            </div>
-            <div class="terminal-body" id="terminal-body">
-              <div class="t-line"><span class="t-prompt">$</span> whoami</div>
-              <div class="t-line t-out">stepan_pribytkov — junior ml engineer</div>
-              <div class="t-line"><span class="t-prompt">$</span> cat focus.txt</div>
-              <div class="t-line t-out">nlp · llm · rag · credit-scoring</div>
-              <div class="t-line"><span class="t-prompt">$</span> cat stack.txt</div>
-              <div class="t-line t-out">python · pytorch · catboost · fastapi · docker</div>
-              <div class="t-line"><span class="t-prompt">$</span> hire --role junior-ml --city москва</div>
-              <div class="t-line t-out t-ok">status: available ✓</div>
-              <div class="t-line install-line">
-                <span class="t-prompt">$</span><code id="install-cmd">git clone github.com/code-stepan/portfolio</code>
-                <button class="copy-btn" data-copy="git clone github.com/code-stepan/portfolio" aria-label="Скопировать"><i class="ri-file-copy-line"></i></button>
+          <div class="profile-card">
+            <div class="profile-head">
+              <div class="profile-avatar">СП</div>
+              <div>
+                <div class="profile-name">Прибытков Степан</div>
+                <div class="profile-role">Junior ML Engineer / Data Scientist</div>
               </div>
+            </div>
+            <div class="profile-rows">
+              <div class="profile-row"><span>Фокус</span><b>NLP · LLM · RAG · Классический ML</b></div>
+              <div class="profile-row"><span>Город</span><b>Москва</b></div>
+              <div class="profile-row"><span>Образование</span><b>РГУ им. А. Н. Косыгина · ПМИ · 2023–2027</b></div>
+              <div class="profile-row"><span>Статус</span><b class="profile-open">Открыт к стажировкам</b></div>
+            </div>
+            <div class="profile-actions">
+              <a href="https://t.me/StepanPEme" target="_blank" rel="noopener" class="btn-primary btn-wide">Написать в Telegram <i class="ri-telegram-fill"></i></a>
             </div>
           </div>
         </div>
@@ -120,7 +98,7 @@
 
     <section class="section" id="about">
       <div class="container">
-        <div class="section-index" data-reveal>#01 · ОБО МНЕ</div>
+        <div class="section-index" data-reveal>01 · ОБО МНЕ</div>
         <h2 class="section-title" data-reveal>Строю ML-системы<br><em>от данных до сервиса</em></h2>
         <div class="about-grid" data-reveal>
           <div class="about-text">
@@ -137,17 +115,17 @@
           </div>
         </div>
         <div class="feature-grid" data-reveal>
-          <div class="feature-item"><span class="feature-num">#01</span><h3>Классический ML</h3><p>CatBoost, LightGBM, WOE/IV, кросс-валидация, feature engineering, SHAP.</p></div>
-          <div class="feature-item"><span class="feature-num">#02</span><h3>NLP и LLM</h3><p>PyTorch, HuggingFace Transformers, эмбеддинги, LoRA/QLoRA, квантование и дистилляция.</p></div>
-          <div class="feature-item"><span class="feature-num">#03</span><h3>Поиск и RAG</h3><p>Гибридный поиск dense + BM25 + RRF, реранкинг, Chroma, Qwen2.5.</p></div>
-          <div class="feature-item"><span class="feature-num">#04</span><h3>Инженерия</h3><p>FastAPI, REST API, Docker, SQL, Git, Linux, pytest, CLI и Python-пакеты.</p></div>
+          <div class="feature-item"><span class="feature-num">01</span><h3>Классический ML</h3><p>CatBoost, LightGBM, WOE/IV, кросс-валидация, feature engineering, SHAP.</p></div>
+          <div class="feature-item"><span class="feature-num">02</span><h3>NLP и LLM</h3><p>PyTorch, HuggingFace Transformers, эмбеддинги, LoRA/QLoRA, квантование и дистилляция.</p></div>
+          <div class="feature-item"><span class="feature-num">03</span><h3>Поиск и RAG</h3><p>Гибридный поиск dense + BM25 + RRF, реранкинг, Chroma, Qwen2.5.</p></div>
+          <div class="feature-item"><span class="feature-num">04</span><h3>Инженерия</h3><p>FastAPI, REST API, Docker, SQL, Git, Linux, pytest, CLI и Python-пакеты.</p></div>
         </div>
       </div>
     </section>
 
     <section class="section" id="skills">
       <div class="container">
-        <div class="section-index" data-reveal>#02 · НАВЫКИ</div>
+        <div class="section-index" data-reveal>02 · НАВЫКИ</div>
         <h2 class="section-title" data-reveal>Инструменты <em>и технологии</em></h2>
         <div class="skill-cards" data-reveal>
           <div class="skill-card"><h3>Языки и данные</h3><p>Python · SQL · PostgreSQL · Pandas · NumPy</p></div>
@@ -164,7 +142,7 @@
 
     <section class="section" id="research">
       <div class="container">
-        <div class="section-index" data-reveal>#03 · НАУЧНАЯ РАБОТА</div>
+        <div class="section-index" data-reveal>03 · НАУЧНАЯ РАБОТА</div>
         <h2 class="section-title" data-reveal>Робастность квантованных <em>и дистиллированных моделей</em></h2>
         <div class="research-card" data-reveal>
           <div class="research-meta">
@@ -195,7 +173,7 @@
 
     <section class="section" id="projects">
       <div class="container">
-        <div class="section-index" data-reveal>#04 · ПРОЕКТЫ</div>
+        <div class="section-index" data-reveal>04 · ПРОЕКТЫ</div>
         <h2 class="section-title" data-reveal>Избранные <em>проекты</em></h2>
         <div class="filter-bar" data-reveal>
           <button class="filter-btn active" data-filter="all">Все</button>
@@ -206,7 +184,7 @@
         <div class="project-grid" id="project-grid">
           <article class="project-card" data-category="ml" data-reveal>
             <div class="project-head">
-              <span class="project-num">P-01</span>
+              <span class="project-num">01</span>
               <span class="project-tag">Pet-проект · 2026</span>
             </div>
             <h3 class="project-title">Кредитный скоринг: прогнозирование дефолта заёмщика</h3>
@@ -222,7 +200,7 @@
 
           <article class="project-card" data-category="rag" data-reveal>
             <div class="project-head">
-              <span class="project-num">P-02</span>
+              <span class="project-num">02</span>
               <span class="project-tag">Pet-проект DLS МФТИ · 2026</span>
             </div>
             <h3 class="project-title">Tourist RAG: русскоязычный помощник по достопримечательностям</h3>
@@ -238,7 +216,7 @@
 
           <article class="project-card" data-category="research" data-reveal>
             <div class="project-head">
-              <span class="project-num">P-03</span>
+              <span class="project-num">03</span>
               <span class="project-tag">ВКР · 2026–2027</span>
             </div>
             <h3 class="project-title">Робастность квантованных и дистиллированных моделей к адверсальным атакам</h3>
@@ -256,7 +234,7 @@
 
     <section class="section" id="education">
       <div class="container">
-        <div class="section-index" data-reveal>#05 · ОБРАЗОВАНИЕ</div>
+        <div class="section-index" data-reveal>05 · ОБРАЗОВАНИЕ</div>
         <h2 class="section-title" data-reveal>Университет <em>и курсы</em></h2>
         <div class="edu-list" data-reveal>
           <div class="edu-row">
@@ -281,7 +259,7 @@
 
     <section class="section" id="contact">
       <div class="container">
-        <div class="section-index" data-reveal>#06 · КОНТАКТЫ</div>
+        <div class="section-index" data-reveal>06 · КОНТАКТЫ</div>
         <h2 class="section-title" data-reveal>Давайте <em>поработаем вместе</em></h2>
         <p class="section-desc" data-reveal>Ищу стажировку или Junior-позицию в области ML, NLP и Data Science. Отвечаю быстро — пишите в Telegram или на почту.</p>
         <div class="contact-grid" data-reveal>
@@ -311,9 +289,8 @@
       </div>
     </div>
     <div class="container footer-bottom">
-      <span class="footer-brand"><span class="logo-mark">$</span>stepan.ml</span>
+      <span class="footer-brand">Прибытков Степан</span>
       <span class="footer-copy">© 2026 Прибытков Степан · ML, NLP и Data Science</span>
-      <span class="footer-hint">Нажмите <kbd>/</kbd> для командной палитры</span>
     </div>
   </footer>
 
@@ -321,6 +298,6 @@
 
   <button class="back-to-top" id="back-to-top" aria-label="Наверх"><i class="ri-arrow-up-line"></i></button>
 
-  <script src="js/main.js?v=2"></script>
+  <script src="js/main.js?v=3"></script>
 </body>
 </html>
