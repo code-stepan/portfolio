@@ -3,17 +3,17 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Прибытков Степан — Junior ML Engineer | Портфолио</title>
+  <title>Прибытков Степан — Junior ML Engineer / Data Scientist | Портфолио</title>
   
   <!-- Meta tags for SEO & Social Sharing -->
-  <meta name="description" content="Портфолио Степана Прибыткова — Junior ML Engineer (NLP, LLM, RAG, PyTorch). Исследование робастности моделей, квантование, дистилляция.">
-  <meta name="keywords" content="ML Engineer, Machine Learning, NLP, LLM, RAG, PyTorch, HuggingFace, FAISS, LangChain, Степан Прибытков">
+  <meta name="description" content="Портфолио Степана Прибыткова — Junior ML Engineer / Data Scientist (NLP, LLM, RAG, CatBoost, PyTorch). Кредитный скоринг, RAG с гибридным поиском, исследование робастности квантованных и дистиллированных моделей.">
+  <meta name="keywords" content="ML Engineer, Data Scientist, Machine Learning, NLP, LLM, RAG, PyTorch, CatBoost, FastAPI, Chroma, Степан Прибытков">
   <meta name="author" content="Степан Прибытков">
 
   <!-- Open Graph / Telegram / Discord Preview -->
   <meta property="og:type" content="website">
-  <meta property="og:title" content="Прибытков Степан — Junior ML Engineer (NLP / LLM)">
-  <meta property="og:description" content="Студент 4 курса ПМИ. Интеллектуальные RAG-системы, исследование робастности квантованных языковых моделей. Ищу стажировку ML-инженером.">
+  <meta property="og:title" content="Прибытков Степан — Junior ML Engineer / Data Scientist (NLP / LLM)">
+  <meta property="og:description" content="Студент 4 курса ПМИ. ML-системы от данных до сервиса: кредитный скоринг (CatBoost, FastAPI) и RAG-пайплайн с гибридным поиском и реранкингом. Ищу стажировку или Junior-позицию."}
   <meta property="og:image" content="https://images.unsplash.com/photo-1618005182384-a83a8bd57fbe?w=1200&auto=format&fit=crop&q=80">
 
   <!-- Favicon -->
@@ -83,7 +83,7 @@
         <div class="hero-content">
           <div class="status-badge">
             <span class="dot"></span>
-            <span data-i18n="statusAvailable">Ищу стажировку ML-инженером</span>
+            <span data-i18n="statusAvailable">Ищу стажировку или Junior-позицию в ML / NLP / Data Science</span>
           </div>
 
           <h1 class="hero-title">
@@ -94,7 +94,7 @@
           </h1>
 
           <p class="hero-desc" data-i18n="heroDesc">
-            Студент 4 курса ПМИ. Занимаюсь NLP и LLM: разрабатываю интеллектуальные RAG-системы, исследую влияние квантования и дистилляции на устойчивость языковых моделей к адверсальным атакам.
+            Студент 4 курса ПМИ. Строю ML-системы от данных до сервиса: кредитный скоринг (CatBoost, WOE-логрегрессия, FastAPI, Docker) и RAG-пайплайн с гибридным поиском, реранкингом и собственными RAGAS-метриками.
           </p>
 
           <div class="hero-buttons">
@@ -144,17 +144,17 @@
 <span class="code-token-prop">@dataclass</span>
 <span class="code-token-keyword">class</span> <span class="code-token-prop">MLEngineer</span>:
     <span class="code-token-prop">name</span>: str = <span class="code-token-string">'Прибытков Степан'</span>
-    <span class="code-token-prop">role</span>: str = <span class="code-token-string">'Junior ML Engineer'</span>
+    <span class="code-token-prop">role</span>: str = <span class="code-token-string">'Junior ML Engineer / Data Scientist'</span>
     <span class="code-token-prop">university</span>: str = <span class="code-token-string">'РГУ им. Косыгина (ПМИ, 4 курс)'</span>
     <span class="code-token-prop">focus</span>: list = [
-        <span class="code-token-string">'NLP & LLM'</span>,
-        <span class="code-token-string">'Intelligent RAG Systems'</span>,
+        <span class="code-token-string">'Credit Scoring'</span>,
+        <span class="code-token-string">'RAG & Hybrid Search'</span>,
         <span class="code-token-string">'Adversarial Robustness'</span>,
         <span class="code-token-string">'Quantization & Distillation'</span>
     ]
     <span class="code-token-prop">stack</span>: tuple = (
-        <span class="code-token-string">'PyTorch'</span>, <span class="code-token-string">'Transformers'</span>, <span class="code-token-string">'FAISS'</span>,
-        <span class="code-token-string">'ColBERT'</span>, <span class="code-token-string">'LangChain'</span>, <span class="code-token-string">'LoRA'</span>
+        <span class="code-token-string">'PyTorch'</span>, <span class="code-token-string">'CatBoost'</span>, <span class="code-token-string">'Chroma'</span>,
+        <span class="code-token-string">'Qwen2.5'</span>, <span class="code-token-string">'FastAPI'</span>, <span class="code-token-string">'Docker'</span>
     )
     <span class="code-token-prop">isOpenForInternship</span>: bool = <span class="code-token-keyword">True</span></code></pre>
           </div>
@@ -167,16 +167,16 @@
       <div class="container">
         <div class="stats-grid">
           <div class="stat-card">
-            <div class="stat-number gradient-text">81%</div>
-            <div class="stat-label" data-i18n="statRecall">Recall@10 в RAG-поиске</div>
+            <div class="stat-number gradient-text">0.774</div>
+            <div class="stat-label" data-i18n="statRecall">ROC-AUC в кредитном скоринге (holdout)</div>
           </div>
           <div class="stat-card">
-            <div class="stat-number gradient-text">15k+</div>
-            <div class="stat-label" data-i18n="statDataset">Записей в датасете</div>
+            <div class="stat-number gradient-text">0.675</div>
+            <div class="stat-label" data-i18n="statDataset">MRR в RAG-поиске (было 0.560)</div>
           </div>
           <div class="stat-card">
-            <div class="stat-number gradient-text">1.8s</div>
-            <div class="stat-label" data-i18n="statLatency">Время ответа p95</div>
+            <div class="stat-number gradient-text">355</div>
+            <div class="stat-label" data-i18n="statLatency">Документов в базе знаний RAG</div>
           </div>
           <div class="stat-card">
             <div class="stat-number gradient-text">4 курс</div>
@@ -191,24 +191,24 @@
       <div class="container">
         <div class="section-header">
           <span class="section-tag" data-i18n="aboutTag">Обо мне</span>
-          <h2 class="section-title" data-i18n="aboutTitle">ML-инженер с фокусом на NLP, LLM и робастность нейросетей</h2>
+          <h2 class="section-title" data-i18n="aboutTitle">ML-инженер: от данных до сервиса — классический ML, NLP и LLM</h2>
         </div>
 
         <div class="about-grid">
           <div class="about-text">
             <p data-i18n="aboutP1">
-              Я студент 4 курса бакалавриата «Прикладная математика и информатика» в РГУ им. А. Н. Косыгина. Мой главный интерес — обработка естественного языка (NLP), большие языковые модели (LLM) и эффективный информационный поиск.
+              Я студент 4 курса бакалавриата «Прикладная математика и информатика» в РГУ им. А. Н. Косыгина. Строю ML-системы от данных до сервиса: от классического машинного обучения (кредитный скоринг) до NLP и больших языковых моделей (RAG).
             </p>
             <p data-i18n="aboutP2">
-              На хакатоне «Альфа-Будущее» разработал интеллектуальную RAG-систему (ColBERT + FAISS + LangChain). В рамках ВКР провожу исследование того, как квантование (INT8, INT4) и дистилляция (DistilBERT, TinyBERT) влияют на робастность трансформеров перед адверсальными атаками (TextFooler, BERT-Attack).
+              Разработал кредитный скоринг (CatBoost, WOE-логрегрессия, Gini/KS/PSI, SHAP, FastAPI, Docker) и RAG-пайплайн с гибридным поиском, реранкингом и собственной реализацией RAGAS-метрик. В рамках ВКР исследую устойчивость квантованных и дистиллированных языковых моделей к адверсальным атакам (TextFooler, BERT-Attack, DeepWordBug). Осваиваю PySpark, MLflow и LangChain.
             </p>
 
             <div class="about-features">
               <div class="about-feature-item">
                 <div class="about-feature-icon"><i class="ri-search-eye-line"></i></div>
                 <div>
-                  <h4 class="about-feature-title" data-i18n="featureRagTitle">RAG & Information Retrieval</h4>
-                  <p class="about-feature-desc" data-i18n="featureRagDesc">Построение векторных индексов (FAISS, ChromaDB), ColBERT, подбор чанкинга и реранкинг.</p>
+                  <h4 class="about-feature-title" data-i18n="featureRagTitle">RAG & Информационный поиск</h4>
+                  <p class="about-feature-desc" data-i18n="featureRagDesc">Гибридный поиск (dense + BM25 + RRF), реранкинг cross-encoder, Chroma, собственные RAGAS-метрики.</p>
                 </div>
               </div>
 
@@ -223,8 +223,8 @@
               <div class="about-feature-item">
                 <div class="about-feature-icon"><i class="ri-brain-line"></i></div>
                 <div>
-                  <h4 class="about-feature-title" data-i18n="featureLlmTitle">LLM & Агенты</h4>
-                  <p class="about-feature-desc" data-i18n="featureLlmDesc">Оркестрация агентов на LangChain/LlamaIndex, тонкая настройка LoRA/QLoRA, промпт-инжиниринг.</p>
+                  <h4 class="about-feature-title" data-i18n="featureLlmTitle">Классический ML & Скоринг</h4>
+                  <p class="about-feature-desc" data-i18n="featureLlmDesc">Кредитный скоринг: CatBoost, WOE/IV, отраслевые метрики Gini/KS/PSI, интерпретация через SHAP, FastAPI.</p>
                 </div>
               </div>
 
@@ -291,12 +291,12 @@
             </div>
             <div class="skill-tags">
               <span class="skill-tag"><i class="ri-terminal-box-line"></i> Python 3.10+</span>
-              <span class="skill-tag"><i class="ri-fire-line"></i> PyTorch</span>
-              <span class="skill-tag"><i class="ri-robot-2-line"></i> HuggingFace Transformers</span>
-              <span class="skill-tag"><i class="ri-pulse-line"></i> scikit-learn</span>
-              <span class="skill-tag"><i class="ri-bar-chart-box-line"></i> CatBoost</span>
-              <span class="skill-tag"><i class="ri-flashlight-line"></i> LightGBM</span>
+              <span class="skill-tag"><i class="ri-database-line"></i> SQL / PostgreSQL</span>
               <span class="skill-tag"><i class="ri-table-line"></i> Pandas & NumPy</span>
+              <span class="skill-tag"><i class="ri-pulse-line"></i> scikit-learn</span>
+              <span class="skill-tag"><i class="ri-bar-chart-box-line"></i> CatBoost & LightGBM</span>
+              <span class="skill-tag"><i class="ri-equalizer-line"></i> WOE / IV</span>
+              <span class="skill-tag"><i class="ri-sun-line"></i> SHAP</span>
             </div>
           </div>
 
@@ -308,12 +308,12 @@
             </div>
             <div class="skill-tags">
               <span class="skill-tag"><i class="ri-compass-3-line"></i> RAG Архитектура</span>
-              <span class="skill-tag"><i class="ri-links-line"></i> LangChain</span>
-              <span class="skill-tag"><i class="ri-stack-line"></i> LlamaIndex</span>
-              <span class="skill-tag"><i class="ri-database-2-line"></i> FAISS & ChromaDB</span>
-              <span class="skill-tag"><i class="ri-search-2-line"></i> ColBERT (RAGatouille)</span>
-              <span class="skill-tag"><i class="ri-text-spacing"></i> Sentence-BERT</span>
-              <span class="skill-tag"><i class="ri-cpu-line"></i> LoRA / QLoRA</span>
+              <span class="skill-tag"><i class="ri-links-line"></i> Гибридный поиск (dense + BM25 + RRF)</span>
+              <span class="skill-tag"><i class="ri-sort-asc"></i> Реранкинг (cross-encoder)</span>
+              <span class="skill-tag"><i class="ri-database-2-line"></i> Chroma</span>
+              <span class="skill-tag"><i class="ri-text-spacing"></i> sentence-transformers (multilingual-e5)</span>
+              <span class="skill-tag"><i class="ri-robot-2-line"></i> Qwen2.5</span>
+              <span class="skill-tag"><i class="ri-fire-line"></i> PyTorch & Transformers</span>
             </div>
           </div>
 
@@ -321,16 +321,16 @@
           <div class="skill-category-card">
             <div class="skill-cat-header">
               <div class="skill-cat-icon"><i class="ri-shield-check-line"></i></div>
-              <h3 class="skill-cat-title" data-i18n="skillCatRobust">Робастность & Сжатие</h3>
+              <h3 class="skill-cat-title" data-i18n="skillCatRobust">Метрики & Робастность</h3>
             </div>
             <div class="skill-tags">
+              <span class="skill-tag"><i class="ri-line-chart-line"></i> ROC-AUC · Gini · KS · PSI</span>
+              <span class="skill-tag"><i class="ri-search-2-line"></i> MRR · Hit@k</span>
+              <span class="skill-tag"><i class="ri-checkbox-circle-line"></i> RAGAS-метрики</span>
               <span class="skill-tag"><i class="ri-bug-line"></i> Адверсальные атаки</span>
-              <span class="skill-tag"><i class="ri-error-warning-line"></i> TextFooler</span>
-              <span class="skill-tag"><i class="ri-crosshair-2-line"></i> BERT-Attack</span>
+              <span class="skill-tag"><i class="ri-error-warning-line"></i> TextFooler · BERT-Attack · DeepWordBug</span>
               <span class="skill-tag"><i class="ri-file-reduce-line"></i> Квантование INT8 / INT4</span>
-              <span class="skill-tag"><i class="ri-drop-line"></i> Дистилляция (DistilBERT)</span>
-              <span class="skill-tag"><i class="ri-speed-up-line"></i> TinyBERT</span>
-              <span class="skill-tag"><i class="ri-line-chart-line"></i> Attack Success Rate (ASR)</span>
+              <span class="skill-tag"><i class="ri-speed-up-line"></i> Дистилляция (DistilBERT, TinyBERT)</span>
             </div>
           </div>
 
@@ -341,13 +341,13 @@
               <h3 class="skill-cat-title" data-i18n="skillCatTools">Инфраструктура & Базы</h3>
             </div>
             <div class="skill-tags">
+              <span class="skill-tag"><i class="ri-server-line"></i> FastAPI & REST API</span>
+              <span class="skill-tag"><i class="ri-computer-line"></i> Docker</span>
               <span class="skill-tag"><i class="ri-git-branch-line"></i> Git & GitHub</span>
               <span class="skill-tag"><i class="ri-terminal-box-line"></i> Linux / Bash</span>
-              <span class="skill-tag"><i class="ri-computer-line"></i> Docker</span>
-              <span class="skill-tag"><i class="ri-database-line"></i> SQL</span>
-              <span class="skill-tag"><i class="ri-hardware-line"></i> CUDA / FAISS-GPU</span>
-              <span class="skill-tag"><i class="ri-global-line"></i> Русский (родной)</span>
-              <span class="skill-tag"><i class="ri-translate-2"></i> Английский (B1)</span>
+              <span class="skill-tag"><i class="ri-test-tube-line"></i> pytest & CLI</span>
+              <span class="skill-tag"><i class="ri-global-line"></i> Русский (родной) · English (B1)</span>
+              <span class="skill-tag"><i class="ri-loader-4-line"></i> Осваиваю: PySpark, MLflow, LangChain</span>
             </div>
           </div>
         </div>
@@ -419,8 +419,8 @@
       <div class="container">
         <div class="section-header">
           <span class="section-tag" data-i18n="projectsTag">Практический опыт</span>
-          <h2 class="section-title" data-i18n="projectsTitle">Проекты и хакатоны</h2>
-          <p class="section-subtitle" data-i18n="projectsSubtitle">Ключевые инженерные решения в области NLP и генеративного AI</p>
+          <h2 class="section-title" data-i18n="projectsTitle">Проекты</h2>
+          <p class="section-subtitle" data-i18n="projectsSubtitle">ML-системы от данных до сервиса: классический ML, RAG и NLP</p>
         </div>
 
         <!-- Filter Buttons -->
@@ -433,10 +433,10 @@
 
         <!-- Projects Grid -->
         <div class="projects-grid">
-          <!-- Project 1: Alpha-Future RAG -->
+          <!-- Project 1: Tourist RAG -->
           <article class="project-card" data-category="rag">
             <div class="project-mockup">
-              <span class="project-badge">Хакатон «Альфа-Будущее»</span>
+              <span class="project-badge">Pet-проект · DLS МФТИ · 2026</span>
               <div class="project-mockup-graphic">
                 <div class="mockup-bar">
                   <div class="mockup-dot"></div>
@@ -444,29 +444,25 @@
                   <div class="mockup-dot"></div>
                 </div>
                 <div class="mockup-preview">
-                  <i class="ri-brain-line mockup-icon"></i>
-                  <span style="font-size: 0.85rem; font-weight: 600;">Интеллектуальная RAG-система</span>
+                  <i class="ri-map-2-line mockup-icon"></i>
+                  <span style="font-size: 0.85rem; font-weight: 600;">RAG с гибридным поиском</span>
                 </div>
               </div>
             </div>
             <div class="project-info">
-              <h3 class="project-title">Интеллектуальная RAG-система</h3>
+              <h3 class="project-title">Tourist RAG: помощник по достопримечательностям</h3>
               <p class="project-desc">
-                Командный проект (диплом участника). Собрал и очистил датасет на 15 тыс. записей (TF-IDF фильтр убрал 11% шума). Реализовал ретривер на ColBERT (RAGatouille) + FAISS-GPU. Подбором чанкинга (512 токенов, overlap 64) и реранкинга поднял <strong>Recall@10 с 62% до 81%</strong>. Агент на Qwen2.5-7B-Instruct валидирует ответ, p95 latency: 1.8 с со ссылками на источники.
+                RAG по 355 достопримечательностям четырёх городов (WikiData, подписи BLIP, координаты). Пайплайн: очистка выбросов, чанкинг с контекстными заголовками, эмбеддинги multilingual-e5 + Chroma, BM25, слияние RRF, реранкинг cross-encoder, генерация Qwen2.5. На 100 вопросах <strong>MRR вырос с 0.560 до 0.675</strong>, Hit@3 — с 0.57 до 0.74. Собственная реализация RAGAS-метрик: answer relevancy 0.81, faithfulness 0.73.
               </p>
               <div class="project-tech">
                 <span class="project-tech-item">Python</span>
-                <span class="project-tech-item">PyTorch</span>
-                <span class="project-tech-item">FAISS-GPU</span>
-                <span class="project-tech-item">RAGatouille</span>
-                <span class="project-tech-item">LangChain</span>
-                <span class="project-tech-item">Qwen2.5-7B</span>
+                <span class="project-tech-item">sentence-transformers</span>
+                <span class="project-tech-item">Chroma</span>
+                <span class="project-tech-item">Qwen2.5</span>
+                <span class="project-tech-item">pytest</span>
               </div>
               <div class="project-links">
-                <a href="#contact" class="btn btn-secondary project-link-btn" title="Код в приватном репозитории, доступ по запросу">
-                  <i class="ri-lock-line"></i> <span>Доступ по запросу</span>
-                </a>
-                <a href="https://github.com/code-stepan" target="_blank" rel="noopener noreferrer" class="btn btn-secondary project-link-btn">
+                <a href="https://github.com/code-stepan/tourist_rag" target="_blank" rel="noopener noreferrer" class="btn btn-secondary project-link-btn">
                   <i class="ri-github-line"></i> <span data-i18n="btnGithub">GitHub</span>
                 </a>
               </div>
@@ -497,8 +493,8 @@
               <div class="project-tech">
                 <span class="project-tech-item">HuggingFace</span>
                 <span class="project-tech-item">PyTorch</span>
-                <span class="project-tech-item">TextAttack</span>
-                <span class="project-tech-item">BitsAndBytes</span>
+                <span class="project-tech-item">TextFooler / BERT-Attack / DeepWordBug</span>
+                <span class="project-tech-item">Квантование INT8 / INT4</span>
                 <span class="project-tech-item">SST-2 / AG News</span>
               </div>
               <div class="project-links">
@@ -512,10 +508,10 @@
             </div>
           </article>
 
-          <!-- Project 3: Ranking & Information Retrieval -->
+          <!-- Project 3: Credit Scoring -->
           <article class="project-card" data-category="ml">
             <div class="project-mockup">
-              <span class="project-badge">VK Education & DLS</span>
+              <span class="project-badge">Pet-проект · Kaggle · 2026</span>
               <div class="project-mockup-graphic">
                 <div class="mockup-bar">
                   <div class="mockup-dot"></div>
@@ -523,25 +519,25 @@
                   <div class="mockup-dot"></div>
                 </div>
                 <div class="mockup-preview">
-                  <i class="ri-sort-asc mockup-icon"></i>
-                  <span style="font-size: 0.85rem; font-weight: 600;">Ranking & Feature Engineering</span>
+                  <i class="ri-bank-card-line mockup-icon"></i>
+                  <span style="font-size: 0.85rem; font-weight: 600;">Credit Scoring & FastAPI</span>
                 </div>
               </div>
             </div>
             <div class="project-info">
-              <h3 class="project-title">Пайплайны ранжирования и классический ML</h3>
+              <h3 class="project-title">Кредитный скоринг: прогноз дефолта заёмщика</h3>
               <p class="project-desc">
-                Разработка моделей ранжирования и классификации на табличных и текстовых данных. Применение градиентного бустинга (CatBoost, LightGBM), генерация признаков, подбор гиперпараметров (Optuna) и оптимизация метрик NDCG@k и MRR.
+                Модель вероятности дефолта на Home Credit Default Risk (~307 тыс. заявок, несбалансированные классы). EDA и feature engineering, агрегация кредитной истории из Bureau. CatBoost против LogReg + WOE на 5-fold CV и holdout: <strong>ROC-AUC 0.7737</strong>, Gini 0.5473, KS 0.4096, PSI для проверки стабильности. Интерпретация через SHAP, REST API на FastAPI, Docker и SQL-витрина признаков.
               </p>
               <div class="project-tech">
                 <span class="project-tech-item">CatBoost</span>
                 <span class="project-tech-item">scikit-learn</span>
-                <span class="project-tech-item">Pandas / NumPy</span>
-                <span class="project-tech-item">Optuna</span>
-                <span class="project-tech-item">Information Retrieval</span>
+                <span class="project-tech-item">SHAP</span>
+                <span class="project-tech-item">FastAPI</span>
+                <span class="project-tech-item">Docker / SQL</span>
               </div>
               <div class="project-links">
-                <a href="https://github.com/code-stepan" target="_blank" rel="noopener noreferrer" class="btn btn-secondary project-link-btn">
+                <a href="https://github.com/code-stepan/home_credit_default_risk" target="_blank" rel="noopener noreferrer" class="btn btn-secondary project-link-btn">
                   <i class="ri-github-line"></i> <span data-i18n="btnGithub">GitHub</span>
                 </a>
               </div>

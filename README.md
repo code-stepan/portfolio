@@ -1,6 +1,6 @@
-# 🧠 Портфолио | Степан Прибытков — Junior ML Engineer
+# 🧠 Портфолио | Степан Прибытков — Junior ML Engineer / Data Scientist
 
-Персональный сайт-портфолио и интерактивное резюме **Степана Прибыткова** (Junior ML Engineer / NLP / LLM).  
+Персональный сайт-портфолио и интерактивное резюме **Степана Прибыткова** (Junior ML Engineer / Data Scientist · NLP и LLM).  
 Сайт полностью оптимизирован для публикации на **GitHub Pages** (поддерживает как ручной выбор ветки, так и автоматический деплой через GitHub Actions).
 
 ---
@@ -8,25 +8,25 @@
 ## 🌟 Ключевые разделы сайта
 
 1. **Главная (Hero)**:
-   - Статус: *«Ищу стажировку ML-инженером»*.
-   - Динамический заголовок с печатной машинкой (*Junior ML Engineer*, *NLP & LLM Researcher*, *RAG Systems Specialist*).
+   - Статус: *«Ищу стажировку или Junior-позицию в ML / NLP / Data Science»*.
+   - Динамический заголовок с печатной машинкой (*Junior ML Engineer*, *Data Scientist*, *NLP & LLM*, *RAG & Hybrid Search*).
    - Интерактивный терминал с кодом на Python (`stepan_ml.py`).
    - Быстрые контакты: Telegram [@StepanPEme](https://t.me/StepanPEme), Email [code_stepan@mail.ru](mailto:code_stepan@mail.ru), телефон `+7 (996) 287-63-74`.
 
 2. **Интерактивные метрики**:
-   - `81%` — Recall@10 в ColBERT RAG ретривере.
-   - `15k+` — записей в датасете хакатона «Альфа-Будущее».
-   - `1.8s` — p95 время ответа агентной системы.
+   - `0.774` — ROC-AUC в кредитном скоринге (holdout, CatBoost).
+   - `0.675` — MRR в RAG-поиске после реранкинга (было 0.560).
+   - `355` — документов в базе знаний Tourist RAG.
    - `4 курс` — ПМИ (РГУ им. А. Н. Косыгина).
 
 3. **Научная деятельность (ВКР 2026–2027)**:
-   - Исследование влияния квантования (INT8, INT4) и дистилляции (DistilBERT, TinyBERT) на устойчивость моделей к адверсальным атакам (TextFooler, BERT-Attack).
+   - Исследование влияния квантования (INT8, INT4) и дистилляции (DistilBERT, TinyBERT) устойчивость квантованных и дистиллированных моделей к адверсальным атакам (TextFooler, BERT-Attack, DeepWordBug).
    - Интерактивные карточки результатов экспериментов на датасете SST-2.
 
-4. **Проекты и хакатоны**:
-   - **Интеллектуальная RAG-система** (Хакатон «Альфа-Будущее», диплом участника) — ColBERT, FAISS-GPU, LangChain, Qwen2.5-7B.
-   - **Бенчмарк робастности сжатых моделей** (HuggingFace, TextAttack, BitsAndBytes).
-   - **Пайплайны ранжирования и ML** (CatBoost, scikit-learn, VK Education & DLS).
+4. **Проекты**:
+   - **Tourist RAG** (Pet-проект на основе задания DLS МФТИ) — гибридный поиск (dense + BM25 + RRF), реранкинг cross-encoder, Chroma, Qwen2.5, собственные RAGAS-метрики; MRR 0.675, Hit@3 0.74.
+   - **Кредитный скоринг** (Home Credit Default Risk) — CatBoost против LogReg + WOE, ROC-AUC 0.7737, Gini/KS/PSI, SHAP, FastAPI, Docker, SQL.
+   - **Бенчмарк робастности сжатых моделей** (ВКР) — HuggingFace, PyTorch, адверсальные атаки, квантование INT8/INT4.
 
 5. **Образование и курсы**:
    - РГУ им. А. Н. Косыгина (Бакалавриат ПМИ, 2023–2027).
