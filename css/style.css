@@ -10,9 +10,9 @@
   --panel-hover: #F3F5FF;
   --border: #D8DEF4;
   --border-soft: #E4E9FA;
-  --blue: #2563EB;
-  --blue-hover: #1D4ED8;
-  --blue-dim: rgba(37, 99, 235, 0.07);
+  --blue: #0000F2;
+  --blue-hover: #1A1AF5;
+  --blue-dim: rgba(0, 0, 242, 0.07);
   --text: #0B1220;
   --muted: #5A6478;
   --faint: #8B93A7;
@@ -66,8 +66,8 @@ img { max-width: 100%; }
   pointer-events: none;
   z-index: 0;
   background-image:
-    linear-gradient(rgba(37, 99, 235, 0.05) 1px, transparent 1px),
-    linear-gradient(90deg, rgba(37, 99, 235, 0.05) 1px, transparent 1px);
+    linear-gradient(rgba(0, 0, 242, 0.05) 1px, transparent 1px),
+    linear-gradient(90deg, rgba(0, 0, 242, 0.05) 1px, transparent 1px);
   background-size: 72px 72px;
   mask-image: radial-gradient(ellipse 90% 60% at 50% 0%, black 0%, transparent 100%);
   -webkit-mask-image: radial-gradient(ellipse 90% 60% at 50% 0%, black 0%, transparent 100%);
@@ -771,7 +771,7 @@ img { max-width: 100%; }
   border-bottom: 1px solid var(--border);
   transition: background 0.2s;
 }
-.edu-row:hover { background: rgba(37, 99, 235, 0.03); }
+.edu-row:hover { background: rgba(0, 0, 242, 0.02); }
 
 .edu-main h3 { font-size: 17px; font-weight: 600; margin-bottom: 4px; }
 .edu-main p { font-size: 14px; color: var(--muted); }
